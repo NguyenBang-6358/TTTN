@@ -1,0 +1,328 @@
+---
+// 📄 index.astro - Trang giới thiệu thông số kỹ thuật
+// MSI GeForce RTX 5090 Lightning Z
+// Sinh viên đang học Astro + Tailwind CSS + Vite
+
+import Layout from '../layouts/Layout.astro';
+
+// Thông số kỹ thuật chính
+const mainSpecs = [
+  { label: 'GPU',             value: 'NVIDIA GeForce RTX 5090',  highlight: true },
+  { label: 'Architecture',    value: 'Blackwell GB202' },
+  { label: 'CUDA Cores',      value: '21,760 cores',             highlight: true },
+  { label: 'Tensor Cores',    value: '680 (Thế hệ 5)',           highlight: true },
+  { label: 'RT Cores',        value: '170 (Thế hệ 4)' },
+  { label: 'VRAM',            value: '32 GB GDDR7',              highlight: true },
+  { label: 'Memory Bus',      value: '512-bit' },
+  { label: 'Memory Bandwidth','value': '1,792 GB/s',              highlight: true },
+  { label: 'Base Clock',      value: '2,017 MHz' },
+  { label: 'Boost Clock',     value: '2,452 MHz (OC Mode)',       highlight: true },
+  { label: 'TDP',             value: '575W' },
+  { label: 'PCIe',            value: 'PCIe 5.0 x16' },
+];
+
+const displaySpecs = [
+  { label: 'DisplayPort',     value: '3× DisplayPort 2.1a' },
+  { label: 'HDMI',            value: '1× HDMI 2.1b' },
+  { label: 'Độ phân giải',    value: 'Lên đến 8K@60Hz' },
+  { label: 'Refresh rate',    value: '4K@240Hz, 1080p@480Hz+' },
+  { label: 'Số màn hình',     value: 'Tối đa 4 màn hình' },
+];
+
+const designSpecs = [
+  { label: 'Kích thước',      value: '366 × 152 × 68 mm' },
+  { label: 'Số khe PCI',      value: '4.2 slot' },
+  { label: 'Số quạt',         value: '3 quạt TORX FAN 5.0' },
+  { label: 'Kết nối điện',    value: '3× 16-pin (PCIe Gen 5)' },
+  { label: 'Nguồn tối thiểu', value: '1000W' },
+  { label: 'LED RGB',         value: 'Mystic Light RGB' },
+];
+
+// Điểm hiệu năng tương đối (so với RTX 4090 = 100%)
+const benchmarks = [
+  { game: 'Cyberpunk 2077 4K Ultra', fps: 124, ref: 'vs RTX 4090: ~68 fps' },
+  { game: 'Black Myth: Wukong 4K',   fps: 118, ref: 'vs RTX 4090: ~62 fps' },
+  { game: 'Alan Wake 2 4K',          fps: 105, ref: 'vs RTX 4090: ~58 fps' },
+  { game: 'Forza Horizon 5 4K',      fps: 210, ref: 'vs RTX 4090: ~120 fps' },
+  { game: 'Microsoft Flight Sim 4K', fps: 98,  ref: 'vs RTX 4090: ~55 fps' },
+];
+
+// Điểm so sánh (thang 100)
+const perfComparison = [
+  { name: 'RTX 5090 Lightning Z', score: 100, color: '#76b900' },
+  { name: 'RTX 4090',             score: 68,  color: '#00a3e0' },
+  { name: 'RTX 4080 Super',       score: 55,  color: '#555' },
+  { name: 'RTX 4070 Ti Super',    score: 44,  color: '#555' },
+];
+
+// Các ảnh gallery
+const images = [
+  { file: 'hero.webp',  caption: 'Toàn cảnh card' },
+  { file: 'front.webp', caption: 'Mặt trước' },
+  { file: 'back.webp',  caption: 'Mặt sau (backplate)' },
+  { file: 'ports.webp', caption: 'Cổng kết nối' },
+];
+---
+
+<Layout title="MSI RTX 5090 Lightning Z - Thông số kỹ thuật">
+
+<!-- ===================== HERO ===================== -->
+<section id="overview" style="padding: 60px 24px 40px; background: linear-gradient(180deg, #111 0%, #0f0f0f 100%);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+
+      <!-- Text -->
+      <div>
+        <span class="badge fade-in">MSI GeForce</span>
+        <h1 class="fade-in delay-1" style="font-size:clamp(28px,4vw,44px);font-weight:800;margin:12px 0 8px;line-height:1.2;">
+          RTX 5090 <span class="text-nvidia">Lightning Z</span>
+        </h1>
+        <p class="fade-in delay-2" style="color:#888;font-size:15px;margin-bottom:24px;max-width:440px;">
+          Card đồ họa flagship của MSI dòng Lightning — thiết kế cao cấp, xung nhịp boost lên đến 
+          <strong style="color:#e5e5e5;">2,452 MHz</strong>, tản nhiệt Triple TORX FAN 5.0, 
+          VRAM <strong style="color:#76b900;">32GB GDDR7</strong>.
+        </p>
+
+        <!-- Quick stats -->
+        <div class="fade-in delay-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
+          {[
+            { label: 'CUDA Cores', value: '21,760' },
+            { label: 'VRAM', value: '32 GB' },
+            { label: 'Boost Clock', value: '2,452 MHz' },
+          ].map(s => (
+            <div style="background:#161616;border:1px solid #252525;border-radius:10px;padding:14px;text-align:center;">
+              <div style="font-size:20px;font-weight:700;color:#76b900;">{s.value}</div>
+              <div style="font-size:11px;color:#666;margin-top:3px;">{s.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <a href="#specs" class="btn-primary fade-in delay-4">
+          📋 Xem thông số đầy đủ
+        </a>
+      </div>
+
+      <!-- Hero image -->
+      <div class="fade-in delay-2">
+        <div class="img-box" style="height:320px;border-radius:12px;">
+          <img
+            src="/images/hero.webp"
+            alt="MSI RTX 5090 Lightning Z"
+            style="width:100%;height:100%;object-fit:cover;border-radius:10px;"
+            onerror="this.parentElement.innerHTML='<div style=\'text-align:center;padding:20px;\'><div style=\'font-size:48px;margin-bottom:10px;\'>🎮</div><div style=\'color:#76b900;font-weight:600;font-size:14px;\'>RTX 5090 Lightning Z</div></div>'"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== SPECS ===================== -->
+<section id="specs" style="padding:64px 24px;">
+  <div class="container">
+
+    <div class="reveal" style="margin-bottom:40px;">
+      <h2 class="section-title">Thông số <span class="text-nvidia">kỹ thuật</span></h2>
+      <p class="section-sub">Toàn bộ thông số chi tiết của MSI RTX 5090 Lightning Z</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
+
+      <!-- GPU Chính -->
+      <div class="card reveal">
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:16px;color:#76b900;">
+          ⚙️ Thông số GPU
+        </h3>
+        {mainSpecs.map(spec => (
+          <div class="spec-row">
+            <span class="spec-label">{spec.label}</span>
+            <span class={`spec-value ${spec.highlight ? 'highlight' : ''}`}>{spec.value}</span>
+          </div>
+        ))}
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px;">
+
+        <!-- Hiển thị -->
+        <div class="card reveal">
+          <h3 style="font-size:15px;font-weight:700;margin-bottom:16px;color:#76b900;">
+            🖥️ Đầu ra màn hình
+          </h3>
+          {displaySpecs.map(spec => (
+            <div class="spec-row">
+              <span class="spec-label">{spec.label}</span>
+              <span class="spec-value">{spec.value}</span>
+            </div>
+          ))}
+        </div>
+
+        <!-- Thiết kế -->
+        <div class="card reveal">
+          <h3 style="font-size:15px;font-weight:700;margin-bottom:16px;color:#76b900;">
+            📐 Thiết kế & Tản nhiệt
+          </h3>
+          {designSpecs.map(spec => (
+            <div class="spec-row">
+              <span class="spec-label">{spec.label}</span>
+              <span class="spec-value">{spec.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Ghi chú nguồn điện -->
+    <div class="reveal" style="
+      margin-top:20px;
+      background:#1a1a1a;
+      border:1px solid #2a2a2a;
+      border-left:3px solid #f59e0b;
+      border-radius:8px;
+      padding:14px 18px;
+      display:flex;align-items:flex-start;gap:10px;
+      font-size:13px;
+    ">
+      <span style="font-size:18px;flex-shrink:0;">⚠️</span>
+      <div>
+        <strong style="color:#f59e0b;">Lưu ý về nguồn điện:</strong>
+        <span style="color:#888;margin-left:6px;">
+          RTX 5090 Lightning Z yêu cầu nguồn tối thiểu 1000W. Card sử dụng 3 đầu 16-pin PCIe Gen 5 (hoặc adapter 3× 8-pin). TDP lên đến 575W khi boost.
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== GALLERY ===================== -->
+<section id="gallery" style="padding:64px 24px;background:#111;">
+  <div class="container">
+
+    <div class="reveal" style="margin-bottom:40px;">
+      <h2 class="section-title">Hình <span class="text-nvidia">ảnh</span></h2>
+    </div>
+
+    <!-- Grid ảnh 3 cột -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+      {images.map((img, i) => (
+        <div class="reveal" style={`transition-delay:${i*60}ms;`}>
+          <div class="img-box" style="height:200px;border-radius:10px;">
+            <img
+              src={`/images/${img.file}`}
+              alt={img.caption}
+              style="width:100%;height:100%;object-fit:contain;padding:12px;border-radius:8px;"
+              onerror={`this.parentElement.innerHTML='<div style="text-align:center;padding:16px;"><div style="font-size:28px;margin-bottom:8px;">📷</div><div style="color:#555;font-size:11px;">${img.caption}</div></div>'`}
+            />
+          </div>
+          <p style="text-align:center;font-size:12px;color:#666;margin-top:6px;">{img.caption}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== PERFORMANCE ===================== -->
+<section id="performance" style="padding:64px 24px;">
+  <div class="container">
+
+    <div class="reveal" style="margin-bottom:40px;">
+      <h2 class="section-title">Hiệu năng <span class="text-nvidia">thực tế</span></h2>
+      <p class="section-sub">FPS trung bình ở độ phân giải 4K — các game AAA nặng nhất</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+
+      <!-- Benchmark FPS -->
+      <div class="card reveal">
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:20px;">
+          🎮 Benchmark 4K (FPS trung bình)
+        </h3>
+        {benchmarks.map(b => (
+          <div style="margin-bottom:18px;">
+            <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;">
+              <span style="color:#ccc;">{b.game}</span>
+              <span style="font-weight:700;color:#76b900;">{b.fps} fps</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width={Math.min(b.fps / 2.5, 100)} style="width:0%;"></div>
+            </div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">{b.ref}</div>
+          </div>
+        ))}
+      </div>
+
+      <!-- So sánh card khác -->
+      <div class="card reveal">
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:20px;">
+          📊 So sánh hiệu năng tương đối
+        </h3>
+        <p style="font-size:11px;color:#555;margin-bottom:20px;">RTX 5090 = 100 điểm chuẩn</p>
+
+        {perfComparison.map(item => (
+          <div style="margin-bottom:20px;">
+            <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px;">
+              <span style={`color:${item.color === '#76b900' ? '#e5e5e5' : '#888'};font-weight:${item.color === '#76b900' ? '600' : '400'};`}>
+                {item.name}
+              </span>
+              <span style={`font-weight:700;color:${item.color};`}>{item.score}%</span>
+            </div>
+            <div class="progress-bar">
+              <div
+                class="progress-fill"
+                data-width={item.score}
+                style={`width:0%;background:${item.color};`}
+              ></div>
+            </div>
+          </div>
+        ))}
+
+        <p style="font-size:11px;color:#555;margin-top:16px;line-height:1.5;">
+          * Dữ liệu dựa trên benchmark tổng hợp từ các bài review quốc tế. Kết quả thực tế có thể thay đổi tùy cấu hình hệ thống.
+        </p>
+      </div>
+    </div>
+
+    <!-- Thông tin thêm -->
+    <div class="reveal" style="margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      {[
+        { icon: '🧠', title: 'DLSS 4', desc: 'Multi Frame Generation — tạo nhiều frame ảo giúp FPS tăng vọt mà chất lượng vẫn cao' },
+        { icon: '🔆', title: 'Ray Tracing Gen 4', desc: 'RT Core thế hệ 4 xử lý ánh sáng thực tế nhanh hơn 2× so với RTX 4090' },
+        { icon: '🤖', title: 'NVIDIA AI', desc: 'Tensor Core thế hệ 5 hỗ trợ AI rendering, video upscaling và nhiều tác vụ AI khác' },
+      ].map(item => (
+        <div class="card">
+          <div style="font-size:28px;margin-bottom:10px;">{item.icon}</div>
+          <h4 style="font-size:14px;font-weight:700;color:#76b900;margin-bottom:6px;">{item.title}</h4>
+          <p style="font-size:12px;color:#777;line-height:1.5;">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== PRICING ===================== -->
+<section style="padding:48px 24px;background:#111;border-top:1px solid #1e1e1e;">
+  <div class="container">
+    <div class="reveal" style="
+      background:#161616;border:1px solid #252525;
+      border-radius:14px;padding:32px;
+      display:flex;align-items:center;justify-content:space-between;gap:24px;
+      flex-wrap:wrap;
+    ">
+      <div>
+        <h3 style="font-size:20px;font-weight:700;margin-bottom:6px;">
+          MSI GeForce <span class="text-nvidia">RTX 5090 Lightning Z</span>
+        </h3>
+        <p style="color:#666;font-size:13px;">Flagship GPU thế hệ Blackwell · Bảo hành 3 năm</p>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:28px;font-weight:800;color:#76b900;">~$2,000+</div>
+        <div style="font-size:11px;color:#555;margin-top:2px;">Giá tham khảo thị trường quốc tế</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>

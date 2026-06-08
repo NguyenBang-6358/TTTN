@@ -1,0 +1,83 @@
+---
+// Layout chung - import CSS vào đây
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+const { title = 'RTX 5090 Lightning Z' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Thông số kỹ thuật VGA MSI GeForce RTX 5090 Lightning Z" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          🎮 RTX 5090 Lightning Z
+        </a>
+        <ul class="nav-links">
+          <li><a href="#overview">Tổng quan</a></li>
+          <li><a href="#specs">Thông số</a></li>
+          <li><a href="#gallery">Hình ảnh</a></li>
+          <li><a href="#performance">Hiệu năng</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main style="padding-top: 60px;">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer style="background:#0a0a0a;border-top:1px solid #1e1e1e;padding:28px 24px;text-align:center;margin-top:80px;">
+      <p style="color:#555;font-size:13px;">
+        MSI GeForce RTX 5090 Lightning Z &nbsp;·&nbsp; Trang giới thiệu thông số kỹ thuật
+      </p>
+      <p style="color:#3a3a3a;font-size:11px;margin-top:6px;font-family:monospace;">
+        Built with Astro + Tailwind CSS + Vite &nbsp;|&nbsp; Sinh viên đang vọc vạch 🚀
+      </p>
+    </footer>
+
+    <!-- Scroll reveal script -->
+    <script is:inline>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('show');
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // Progress bar animation
+      const barObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const fill = e.target.querySelector('.progress-fill');
+            if (fill) {
+              const w = fill.getAttribute('data-width');
+              fill.style.width = w + '%';
+            }
+          }
+        });
+      }, { threshold: 0.4 });
+
+      document.querySelectorAll('.progress-bar').forEach(el => barObserver.observe(el));
+    </script>
+  </body>
+</html>
