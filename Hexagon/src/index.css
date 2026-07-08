@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-accent: #d97706;
+}
+
+html {
+  scroll-behavior: smooth;
+}
