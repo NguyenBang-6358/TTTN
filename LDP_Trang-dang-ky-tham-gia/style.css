@@ -1,0 +1,481 @@
+/* Custom style */
+
+:root {
+    --purple-text: #8b1063;
+    --yellow-text: #ffd700;
+    --blue-text: #2e5b99;
+}
+
+body {
+    background-color: #140528; 
+    background-image: url('./images/BG-TRANGVOTING.png');
+    background-size: 100% auto;
+    background-position: center 10px;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header */
+.top-bar {
+    background-color: #8A008F;
+    height: 63px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.logo-app {
+    height: 60px;
+    width: auto;
+}
+
+.top-title {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    line-height: 1.1;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.top-subtitle {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14.5px;
+    font-weight: bold;
+    color: #fbd665;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    letter-spacing: 0.5px;
+}
+
+.btn-login-img {
+    width: 130px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.btn-login-img:hover {
+    transform: scale(1.05);
+}
+
+/* Logo & Hero */
+.main-logo {
+    max-width: 400px;
+    margin-bottom: -40px;
+}
+.title-logo {
+    max-width: 600px;
+}
+
+/* Navigation menu */
+.nav-menu-wrapper {
+    position: relative;
+    padding: 0 65px;
+    display: inline-flex !important;
+    margin: 0 auto;
+    max-width: 1350px;
+    height: 100px;
+}
+
+.nav-menu-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/khungdautrang.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.nav-item-img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hover effect */
+.thele-btn::after,
+.hd-btn::after,
+.taigame-btn::after,
+.napthe-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: sepia(1) hue-rotate(291deg) saturate(2.2) brightness(1.1);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.thele-btn::after { background-image: url('./images/thele.png'); }
+.hd-btn::after { background-image: url('./images/hd.png'); }
+.taigame-btn::after { background-image: url('./images/taigame.png'); }
+.napthe-btn::after { background-image: url('./images/napthe.png'); }
+
+.thele-btn:hover::after,
+.hd-btn:hover::after,
+.taigame-btn:hover::after,
+.napthe-btn:hover::after {
+    opacity: 1;
+}
+
+/* Button styles */
+.thele-btn { background-image: url('./images/thele.png'); width: 180px; height: 65px; }
+.hd-btn { background-image: url('./images/hd.png'); width: 180px; height: 65px; }
+.taigame-btn { background-image: url('./images/taigame.png'); width: 180px; height: 65px; }
+.napthe-btn { background-image: url('./images/napthe.png'); width: 180px; height: 65px; }
+
+/* Vote button */
+.votengay-btn {
+    width: 215px;
+    height: 199px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-top: -100px;
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-shadow: none;
+    position: relative;
+    z-index: 3;
+    padding-bottom: 25px;
+}
+.votengay-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/votengay.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    transition: opacity 1.2s ease;
+    z-index: 1;
+}
+.votengay-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/votengay.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: hue-rotate(290deg) saturate(1.5) brightness(0.95);
+    opacity: 0;
+    transition: opacity 1.2s ease;
+    z-index: 1;
+}
+.votengay-btn:hover::before {
+    opacity: 0; /* Ẩn hoàn toàn khiên vàng để hiển thị nền xuyên thấu */
+}
+.votengay-btn:hover::after {
+    opacity: 1; /* Đặt độ mờ 100% khi kết thúc transition để khiên hồng hiển thị đặc hoàn toàn */
+}
+.votengay-btn span {
+    position: relative;
+    z-index: 2;
+    line-height: 100%;
+    display: block;
+}
+
+/* Form container */
+.registration-container {
+    max-width: 1100px;
+    margin-bottom: 80px;
+}
+
+.registration-box {
+    background-color: transparent;
+    position: relative;
+}
+
+/* Colors */
+.text-purple { color: var(--purple-text); }
+.text-yellow { color: var(--yellow-text); }
+.text-blue { color: var(--blue-text); }
+
+/* Upload area */
+.upload-container {
+    max-width: 650px;
+    width: 100%;
+}
+.upload-main {
+    cursor: pointer;
+}
+.upload-main img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.upload-sub {
+    cursor: pointer;
+    flex: 1;
+}
+.upload-sub img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.upload-note {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic !important;
+    font-size: 20px;
+    color: #E0E0E0;
+}
+
+/* Character info */
+.character-info {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.character-info strong {
+    font-weight: 700;
+    color: #FFE779 !important;
+}
+
+/* Form wrapper */
+.form-wrapper {
+    max-width: 408px;
+    width: 100%;
+}
+
+/* Inputs */
+.custom-input {
+    background-image: url('./images/box text.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    height: 45px;
+    padding: 0 25px;
+    color: #333333;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+.custom-input:focus {
+    background-color: transparent !important;
+    outline: none;
+    box-shadow: none;
+}
+.custom-input::placeholder {
+    color: #666666 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.custom-input-short {
+    background-image: url('./images/boxtextngan.png') !important;
+}
+
+/* CCCD Title */
+.cccd-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #E0E0E0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+.textarea-custom {
+    background-image: url('./images/boxtext bự.png') !important;
+    resize: none;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    height: 95px !important;
+    color: #333333 !important;
+    font-size: 14px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+.textarea-custom::placeholder {
+    color: #666666 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px !important;
+    opacity: 0.8;
+}
+
+/* ID Card images */
+.id-card {
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s;
+    max-width: 165px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.id-card:hover {
+    transform: scale(1.02);
+}
+
+/* Action buttons */
+.btn-image {
+    background-color: transparent;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 195px;
+    height: 67px;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-dongy { background-image: url('./images/buttondongy.png'); }
+.btn-huybo { background-image: url('./images/buttonhuybo.png'); }
+
+.btn-dongy::after {
+    background-image: url('./images/buttondongy.png');
+    filter: hue-rotate(-45deg) saturate(1.3) brightness(0.95);
+}
+
+.btn-huybo::after {
+    background-image: url('./images/buttonhuybo.png');
+    filter: hue-rotate(-45deg) saturate(1.3) brightness(0.95);
+}
+
+.btn-image:hover::after {
+    opacity: 1;
+}
+
+/* Radio buttons */
+.radio-custom {
+    cursor: pointer;
+}
+.radio-custom input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.radio-custom input[type="radio"]:checked::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #1F46B4;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Close button for popup */
+.popup-close-btn {
+    position: absolute;
+    top: 28px;
+    right: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 576px) {
+    .popup-close-btn {
+        top: 10px;
+        right: 12px;
+    }
+    .popup-close-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Notification text */
+.thongbao-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-align: center;
+    white-space: nowrap;
+}
+@media (max-width: 576px) {
+    .thongbao-text {
+        font-size: 18px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .nav-menu-wrapper { 
+        flex-wrap: wrap; 
+        background-image: none; 
+        padding: 0; 
+    }
+    .main-shield-btn { 
+        width: 100px; 
+        height: 100px; 
+        margin-top: 0; 
+        font-size: 14px; 
+    }
+    .form-wrapper {
+        margin: 0 auto;
+    }
+}
