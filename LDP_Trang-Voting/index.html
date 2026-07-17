@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LDP Miss Mister - Hào Khí Du Hiệp</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Google Fonts: Montserrat & Oswald for gaming theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER NAVBAR -->
+  <nav class="navbar navbar-expand navbar-dark p-0 main-navbar">
+    <div class="navbar-container justify-content-between align-items-center d-flex">
+      <!-- Left side: App Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="images/iconapp.png" alt="Hào Khí Du Hiệp" class="brand-logo img-fluid">
+      </a>
+
+      <!-- Right side: Social links & Login -->
+      <div class="d-flex align-items-center gap-4 navbar-right-group">
+        <a href="#" class="social-icon-btn" title="Trang chủ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="35" fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M6.5 14.5v-3.507c0-.235.19-.425.425-.425h2.148c.235 0 .425.19.425.425V14.5h3.5A1.5 1.5 0 0 0 15 13V6.7L8 1.4 1 6.7V13a1.5 1.5 0 0 0 1.5 1.5h3.5Z" />
+          </svg>
+        </a>
+        <a href="#" class="social-icon-btn" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="40" fill="currentColor" viewBox="0 0 320 512"
+            style="transform: translateY(1px);">
+            <path
+              d="M80 299.3V256H12v-54.7h68v-39.7c0-67.5 41.2-104.3 101.4-104.3 28.8 0 53.6 2.1 60.8 3v70.5h-41.8c-32.7 0-39 15.6-39 38.3V201h78l-10.2 54.7h-67.8v166.7H80z" />
+          </svg>
+        </a>
+
+        <!-- Login Button -->
+        <a href="#" class="login-btn-img-wrapper">
+          <img src="images/đn.png" alt="Đăng Nhập" class="login-btn-img">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN WRAPPER -->
+  <div class="main-page-wrapper">
+
+    <!-- SECTION 1: HERO SECTION -->
+    <section id="hero" class="d-flex flex-column align-items-center justify-content-start text-center">
+      <!-- Game Logo -->
+      <div class="logo-game-container">
+        <img src="images/Logo-HaoKhiDuHiep.png" alt="Logo Hào Khí Du Hiệp" class="logo-game img-fluid">
+      </div>
+
+      <!-- Title Hero -->
+      <div class="hero-title-container">
+        <img src="images/text.png" alt="Miss Mister Hào Khí Du Hiệp" class="hero-title img-fluid">
+      </div>
+
+      <!-- Control Panel & Buttons at the bottom of Hero -->
+      <div class="hero-buttons-panel-container">
+        <!-- Background Bar -->
+        <div class="buttons-bg-bar"></div>
+
+        <!-- Buttons Overlay -->
+        <div class="buttons-overlay-content d-flex justify-content-center align-items-center">
+          <div class="d-flex align-items-center justify-content-center w-100 buttons-inner-wrapper">
+            <!-- Left Group -->
+            <div class="btn-group-left d-flex gap-2 justify-content-end align-items-center">
+              <a href="javascript:void(0)" class="action-btn-img-btn" data-bs-toggle="modal" data-bs-target="#hdModal">
+                <img src="images/hd.png" alt="Hướng Dẫn" class="action-btn-img">
+              </a>
+              <a href="javascript:void(0)" class="action-btn-img-btn" data-bs-toggle="modal" data-bs-target="#hoafreeModal">
+                <img src="images/hoafree.png" alt="Hoa Free" class="action-btn-img">
+              </a>
+            </div>
+
+            <!-- Absolute Center: Vote Now -->
+            <div class="btn-center-vote">
+              <a class="vote-now-btn-btn">
+                <img src="images/votengay.png" alt="Vote Ngay" class="vote-now-btn-img">
+              </a>
+            </div>
+
+            <!-- Right Group -->
+            <div class="btn-group-right d-flex gap-2 justify-content-start align-items-center">
+              <a href="javascript:void(0)" class="action-btn-img-btn">
+                <img src="images/quatichluy.png" alt="Quà Tích Lũy" class="action-btn-img">
+              </a>
+              <a href="javascript:void(0)" class="action-btn-img-btn">
+                <img src="images/naphoa.png" alt="Nạp Hoa" class="action-btn-img">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CANDIDATES LIST SECTION -->
+    <section id="candidates" class="py-5 px-3">
+      <div class="container text-center pt-5">
+
+        <!-- Section Title -->
+        <div class="section-title-container mb-4">
+          <img src="images/danhsachthisinh.png" alt="Danh Sách Thí Sinh" class="section-title-img img-fluid">
+        </div>
+
+        <!-- Filters Bar -->
+        <div class="filter-row mb-5">
+          <!-- Left: 3 dropdowns grouped -->
+          <div class="select-group-wrapper">
+            <select class="form-select select-custom">
+              <option>Sắp xếp</option>
+              <option>Bình chọn giảm dần</option>
+              <option>Bình chọn tăng dần</option>
+            </select>
+            <select class="form-select select-custom">
+              <option>Chọn giới tính</option>
+              <option>Mỹ Nhân (Nữ)</option>
+              <option>Mỹ Nam (Nam)</option>
+            </select>
+            <select class="form-select select-custom">
+              <option>Chọn máy chủ</option>
+              <option>S1 - Lý Bạch</option>
+              <option>S2 - Trầm Hương</option>
+              <option>S3 - Trường An</option>
+            </select>
+          </div>
+
+          <!-- Right: Search Input -->
+          <div class="search-container position-relative">
+            <input type="text" class="form-control input-custom" placeholder="Tìm thí sinh theo Số Báo Danh">
+            <i class="bi bi-search search-icon"></i>
+          </div>
+        </div>
+
+        <!-- Grid of Candidates (6 Static Cards) -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center" id="candidates-grid">
+
+          <!-- Candidate 1 -->
+          <div class="col">
+            <div class="candidate-card-wrapper" data-bs-toggle="modal" data-bs-target="#thongtinModal" style="cursor:pointer;">
+              <div class="candidate-card">
+                <div class="card-badges">
+                  <span class="card-badge-left"><img src="images/xephang.png" class="badge-icon-left"
+                      alt="Xếp Hạng"><span class="badge-number">999</span></span>
+                  <span class="card-badge-right"><span class="badge-number">9999</span><img src="images/hoa.png"
+                      class="badge-icon-right" alt="Hoa"></span>
+                </div>
+                <div class="card-info">
+                  <h5 class="candidate-name">Tên thí sinh - SBD 1234</h5>
+                  <p class="candidate-server mb-0">Server 01 - Lý Bạch</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Candidate 2 -->
+          <div class="col">
+            <div class="candidate-card-wrapper" data-bs-toggle="modal" data-bs-target="#thongtinModal" style="cursor:pointer;">
+              <div class="candidate-card">
+                <div class="card-badges">
+                  <span class="card-badge-left"><img src="images/xephang.png" class="badge-icon-left"
+                      alt="Xếp Hạng"><span class="badge-number">999</span></span>
+                  <span class="card-badge-right"><span class="badge-number">9999</span><img src="images/hoa.png"
+                      class="badge-icon-right" alt="Hoa"></span>
+                </div>
+                <div class="card-info">
+                  <h5 class="candidate-name">Tên thí sinh - SBD 1234</h5>
+                  <p class="candidate-server mb-0">Server 01 - Lý Bạch</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Candidate 3 -->
+          <div class="col">
+            <div class="candidate-card-wrapper" data-bs-toggle="modal" data-bs-target="#thongtinModal" style="cursor:pointer;">
+              <div class="candidate-card">
+                <div class="card-badges">
+                  <span class="card-badge-left"><img src="images/xephang.png" class="badge-icon-left"
+                      alt="Xếp Hạng"><span class="badge-number">999</span></span>
+                  <span class="card-badge-right"><span class="badge-number">9999</span><img src="images/hoa.png"
+                      class="badge-icon-right" alt="Hoa"></span>
+                </div>
+                <div class="card-info">
+                  <h5 class="candidate-name">Tên thí sinh - SBD 1234</h5>
+                  <p class="candidate-server mb-0">Server 01 - Lý Bạch</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Candidate 4 -->
+          <div class="col">
+            <div class="candidate-card-wrapper" data-bs-toggle="modal" data-bs-target="#thongtinModal" style="cursor:pointer;">
+              <div class="candidate-card">
+                <div class="card-badges">
+                  <span class="card-badge-left"><img src="images/xephang.png" class="badge-icon-left"
+                      alt="Xếp Hạng"><span class="badge-number">999</span></span>
+                  <span class="card-badge-right"><span class="badge-number">9999</span><img src="images/hoa.png"
+                      class="badge-icon-right" alt="Hoa"></span>
+                </div>
+                <div class="card-info">
+                  <h5 class="candidate-name">Tên thí sinh - SBD 1234</h5>
+                  <p class="candidate-server mb-0">Server 01 - Lý Bạch</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Candidate 5 -->
+          <div class="col">
+            <div class="candidate-card-wrapper" data-bs-toggle="modal" data-bs-target="#thongtinModal" style="cursor:pointer;">
+              <div class="candidate-card">
+                <div class="card-badges">
+                  <span class="card-badge-left"><img src="images/xephang.png" class="badge-icon-left"
+                      alt="Xếp Hạng"><span class="badge-number">999</span></span>
+                  <span class="card-badge-right"><span class="badge-number">9999</span><img src="images/hoa.png"
+                      class="badge-icon-right" alt="Hoa"></span>
+                </div>
+                <div class="card-info">
+                  <h5 class="candidate-name">Tên thí sinh - SBD 1234</h5>
+                  <p class="candidate-server mb-0">Server 01 - Lý Bạch</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Candidate 6 -->
+          <div class="col">
+            <div class="candidate-card-wrapper" data-bs-toggle="modal" data-bs-target="#thongtinModal" style="cursor:pointer;">
+              <div class="candidate-card">
+                <div class="card-badges">
+                  <span class="card-badge-left"><img src="images/xephang.png" class="badge-icon-left"
+                      alt="Xếp Hạng"><span class="badge-number">999</span></span>
+                  <span class="card-badge-right"><span class="badge-number">9999</span><img src="images/hoa.png"
+                      class="badge-icon-right" alt="Hoa"></span>
+                </div>
+                <div class="card-info">
+                  <h5 class="candidate-name">Tên thí sinh - SBD 1234</h5>
+                  <p class="candidate-server mb-0">Server 01 - Lý Bạch</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Candidate 7 -->
+          <div class="col">
+            <div class="candidate-card-wrapper" data-bs-toggle="modal" data-bs-target="#thongtinModal" style="cursor:pointer;">
+              <div class="candidate-card">
+                <div class="card-badges">
+                  <span class="card-badge-left"><img src="images/xephang.png" class="badge-icon-left"
+                      alt="Xếp Hạng"><span class="badge-number">999</span></span>
+                  <span class="card-badge-right"><span class="badge-number">9999</span><img src="images/hoa.png"
+                      class="badge-icon-right" alt="Hoa"></span>
+                </div>
+                <div class="card-info">
+                  <h5 class="candidate-name">Tên thí sinh - SBD 1234</h5>
+                  <p class="candidate-server mb-0">Server 01 - Lý Bạch</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Candidate 8 -->
+          <div class="col">
+            <div class="candidate-card-wrapper" data-bs-toggle="modal" data-bs-target="#thongtinModal" style="cursor:pointer;">
+              <div class="candidate-card">
+                <div class="card-badges">
+                  <span class="card-badge-left"><img src="images/xephang.png" class="badge-icon-left"
+                      alt="Xếp Hạng"><span class="badge-number">999</span></span>
+                  <span class="card-badge-right"><span class="badge-number">9999</span><img src="images/hoa.png"
+                      class="badge-icon-right" alt="Hoa"></span>
+                </div>
+                <div class="card-info">
+                  <h5 class="candidate-name">Tên thí sinh - SBD 1234</h5>
+                  <p class="candidate-server mb-0">Server 01 - Lý Bạch</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Candidate 9 -->
+          <div class="col">
+            <div class="candidate-card-wrapper" data-bs-toggle="modal" data-bs-target="#thongtinModal" style="cursor:pointer;">
+              <div class="candidate-card">
+                <div class="card-badges">
+                  <span class="card-badge-left"><img src="images/xephang.png" class="badge-icon-left"
+                      alt="Xếp Hạng"><span class="badge-number">999</span></span>
+                  <span class="card-badge-right"><span class="badge-number">9999</span><img src="images/hoa.png"
+                      class="badge-icon-right" alt="Hoa"></span>
+                </div>
+                <div class="card-info">
+                  <h5 class="candidate-name">Tên thí sinh - SBD 1234</h5>
+                  <p class="candidate-server mb-0">Server 01 - Lý Bạch</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="d-flex justify-content-center align-items-center gap-2 mt-5 pagination-container">
+          <a href="javascript:void(0);" class="page-btn-trung">Đầu</a>
+          <a href="javascript:void(0);" class="page-btn-lon">Trang Trước</a>
+
+          <div class="d-flex gap-2">
+            <a href="javascript:void(0);" class="page-btn-nho">1</a>
+            <a href="javascript:void(0);" class="page-btn-nho">2</a>
+            <a href="javascript:void(0);" class="page-btn-nho">3</a>
+          </div>
+
+          <a href="javascript:void(0);" class="page-btn-lon">Trang Sau</a>
+          <a href="javascript:void(0);" class="page-btn-trung">Cuối</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: MILESTONE REWARDS SECTION -->
+    <section id="rewards" class="py-5 px-3">
+      <div class="container text-center pt-5">
+
+        <!-- Section Title -->
+        <div class="section-title-container mb-2">
+          <img src="images/tichluymocdoiqua.png" alt="Tích Lũy Mốc Đổi Quà" class="section-title-img img-fluid">
+        </div>
+
+        <!-- Subtitle -->
+        <h4 class="text-white fw-bold mb-4 font-montserrat rewards-subtitle">
+          Đã tích lũy <span class="text-warning fs-3 px-1">0</span> hoa
+        </h4>
+
+        <!-- Custom Progress Bar -->
+        <div class="progress-bar-outer-wrapper mb-5">
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 0%;"></div>
+
+            <!-- Milestones Markers -->
+            <div class="milestone-marker" style="left: 13.5%;">
+              <div class="milestone-flower"></div>
+              <div class="milestone-label">50 Hoa</div>
+            </div>
+            <div class="milestone-marker" style="left: 38.5%;">
+              <div class="milestone-flower"></div>
+              <div class="milestone-label">150 Hoa</div>
+            </div>
+            <div class="milestone-marker" style="left: 65%;">
+              <div class="milestone-flower"></div>
+              <div class="milestone-label">500 Hoa</div>
+            </div>
+            <div class="milestone-marker" style="left: 89.5%;">
+              <div class="milestone-flower"></div>
+              <div class="milestone-label">1000 Hoa</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid of 4 Gift Boxes -->
+        <div class="row row-cols-2 row-cols-lg-4 g-4 mt-5 justify-content-center">
+
+          <!-- Box 1: 50 Flowers -->
+          <div class="col gift-box-card">
+            <div class="gift-box-item">
+              <div class="gift-grid">
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+              </div>
+            </div>
+            <a href="javascript:void(0)" class="btn-nhan-btn" data-bs-toggle="modal" data-bs-target="#nhancodeModal" data-milestone="50" data-code="ABACA0145656">
+              <img src="images/buttonnhan.png" alt="Nhận Quà 50 Hoa" class="btn-nhan-img">
+            </a>
+          </div>
+
+          <!-- Box 2: 150 Flowers -->
+          <div class="col gift-box-card">
+            <div class="gift-box-item">
+              <div class="gift-grid">
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+              </div>
+            </div>
+            <a href="javascript:void(0)" class="btn-nhan-btn" data-bs-toggle="modal" data-bs-target="#nhancodeModal" data-milestone="150" data-code="ABACA0145656">
+              <img src="images/buttonnhan.png" alt="Nhận Quà 150 Hoa" class="btn-nhan-img">
+            </a>
+          </div>
+
+          <!-- Box 3: 500 Flowers -->
+          <div class="col gift-box-card">
+            <div class="gift-box-item">
+              <div class="gift-grid">
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+              </div>
+            </div>
+            <a href="javascript:void(0)" class="btn-nhan-btn" data-bs-toggle="modal" data-bs-target="#nhancodeModal" data-milestone="500" data-code="ABACA0145656">
+              <img src="images/buttonnhan.png" alt="Nhận Quà 500 Hoa" class="btn-nhan-img">
+            </a>
+          </div>
+
+          <!-- Box 4: 1000 Flowers -->
+          <div class="col gift-box-card">
+            <div class="gift-box-item">
+              <div class="gift-grid">
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+                <div class="gift-slot"></div>
+              </div>
+            </div>
+            <a href="javascript:void(0)" class="btn-nhan-btn" data-bs-toggle="modal" data-bs-target="#nhancodeModal" data-milestone="1000" data-code="ABACA0145656">
+              <img src="images/buttonnhan.png" alt="Nhận Quà 1000 Hoa" class="btn-nhan-img">
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: LEADERBOARD SECTION -->
+    <section id="leaderboard" class="py-5 px-3">
+      <div class="container text-center pt-5">
+
+        <!-- Section Title -->
+        <div class="section-title-container mb-4">
+          <img src="images/bxh.png" alt="Bảng Xếp Hạng" class="section-title-img img-fluid">
+        </div>
+
+        <!-- Leaderboard Wrapper Frame -->
+        <div class="leaderboard-wrapper">
+
+          <!-- Top Tabs -->
+          <div class="bxh-tabs">
+            <a href="javascript:void(0)" class="bxh-tab-btn active" id="tab-mynhan">
+              <img src="images/bxhmynhan.png" alt="BXH Đệ Nhất Mỹ Nhân" class="bxh-tab-img">
+            </a>
+            <a href="javascript:void(0)" class="bxh-tab-btn" id="tab-mynam">
+              <img src="images/bxhmynam.png" alt="BXH Tuyệt Thế Mỹ Nam" class="bxh-tab-img">
+            </a>
+            <a href="javascript:void(0)" class="bxh-tab-btn" id="tab-phugiap">
+              <img src="images/bxhphugiap.png" alt="BXH Phú Giáp Thiên Hạ" class="bxh-tab-img">
+            </a>
+          </div>
+
+          <!-- Table Board -->
+          <div class="table-responsive bxh-table-container">
+            <table class="table table-borderless text-white align-middle font-montserrat" id="bxh-table">
+              <thead>
+                <tr>
+                  <th style="width: 20%;">HẠNG</th>
+                  <th style="width: 35%;">TÊN NHÂN VẬT</th>
+                  <th style="width: 25%;">MÁY CHỦ</th>
+                  <th style="width: 20%;">HOA NHẬN</th>
+                </tr>
+              </thead>
+              <tbody id="bxh-table-body">
+                <!-- Rank 1 -->
+                <tr>
+                  <td><img src="images/hang1.png" class="rank-crown" alt="Hạng 1"></td>
+                  <td><span class="player-name">Lục Trà Bạc Hà</span></td>
+                  <td><span class="player-server">S1 - Lý Bạch</span></td>
+                  <td><span class="player-flowers text-warning fw-bold">9999.9999</span></td>
+                </tr>
+                <!-- Rank 2 -->
+                <tr>
+                  <td><img src="images/hang2.png" class="rank-crown" alt="Hạng 2"></td>
+                  <td><span class="player-name"></span></td>
+                  <td><span class="player-server"></span></td>
+                  <td><span class="player-flowers text-warning fw-bold"></span></td>
+                </tr>
+                <!-- Rank 3 -->
+                <tr>
+                  <td><img src="images/hang3.png" class="rank-crown" alt="Hạng 3"></td>
+                  <td><span class="player-name"></span></td>
+                  <td><span class="player-server"></span></td>
+                  <td><span class="player-flowers text-warning fw-bold"></span></td>
+                </tr>
+                <!-- Rank 4 -->
+                <tr>
+                  <td><span class="rank-number">4</span></td>
+                  <td><span class="player-name"></span></td>
+                  <td><span class="player-server"></span></td>
+                  <td><span class="player-flowers text-warning fw-bold"></span></td>
+                </tr>
+                <!-- Rank 5 -->
+                <tr>
+                  <td><span class="rank-number">5</span></td>
+                  <td><span class="player-name"></span></td>
+                  <td><span class="player-server"></span></td>
+                  <td><span class="player-flowers text-warning fw-bold"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+  </div>
+
+  <!-- Guide Modal -->
+  <div class="modal fade" id="hdModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0 text-center" data-bs-dismiss="modal" style="cursor: pointer;">
+          <img src="images/popup_huongdan.png" alt="Hướng Dẫn" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hoa Free Modal -->
+  <div class="modal fade" id="hoafreeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0 position-relative">
+          <!-- Background frame -->
+          <img src="images/popup_nhanhoafree.png" alt="Nhận Hoa Free" class="img-fluid w-100">
+          
+          <!-- Close button (transparent overlay on the X in image) -->
+          <button type="button" class="popup-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+
+          <!-- Content overlay -->
+          <div class="hoafree-content-overlay">
+            <!-- Row 1 -->
+            <div class="hoafree-row">
+              <div class="hoafree-box-wrapper">
+                <img src="images/nv.png" alt="" class="hoafree-box-bg">
+                <span class="hoafree-box-text">Đăng nhập mỗi ngày: +10 hoa</span>
+              </div>
+              <a href="javascript:void(0)" class="hoafree-nhan-btn">
+                <img src="images/buttonnhan.png" alt="Nhận" class="hoafree-nhan-img">
+              </a>
+            </div>
+            <!-- Row 2 -->
+            <div class="hoafree-row">
+              <div class="hoafree-box-wrapper">
+                <img src="images/nv.png" alt="" class="hoafree-box-bg">
+                <span class="hoafree-box-text">Share Landing: +10 hoa</span>
+              </div>
+              <a href="javascript:void(0)" class="hoafree-nhan-btn">
+                <img src="images/buttonnhan.png" alt="Nhận" class="hoafree-nhan-img">
+              </a>
+            </div>
+            <!-- Row 3 -->
+            <div class="hoafree-row">
+              <div class="hoafree-box-wrapper">
+                <img src="images/nv.png" alt="" class="hoafree-box-bg">
+                <span class="hoafree-box-text">Like Fanpage: +10 hoa</span>
+              </div>
+              <a href="javascript:void(0)" class="hoafree-nhan-btn">
+                <img src="images/buttonnhan.png" alt="Nhận" class="hoafree-nhan-img">
+              </a>
+            </div>
+            <!-- Row 4 -->
+            <div class="hoafree-row">
+              <div class="hoafree-box-wrapper">
+                <img src="images/nv.png" alt="" class="hoafree-box-bg">
+                <span class="hoafree-box-text">Like Post: +10 hoa</span>
+              </div>
+              <a href="javascript:void(0)" class="hoafree-nhan-btn">
+                <img src="images/buttonnhan.png" alt="Nhận" class="hoafree-nhan-img">
+              </a>
+            </div>
+            <!-- Row 5 -->
+            <div class="hoafree-row">
+              <div class="hoafree-box-wrapper">
+                <img src="images/nv.png" alt="" class="hoafree-box-bg">
+                <span class="hoafree-box-text">Tham gia group: +10 hoa</span>
+              </div>
+              <a href="javascript:void(0)" class="hoafree-nhan-btn">
+                <img src="images/buttonnhan.png" alt="Nhận" class="hoafree-nhan-img">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nhận Code Modal -->
+  <div class="modal fade" id="nhancodeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 520px;">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0 position-relative">
+          <!-- Background frame -->
+          <img src="images/popupnhancode.png" alt="Nhận Code" class="img-fluid w-100">
+          
+          <!-- Close button (transparent overlay on the X in image) -->
+          <button type="button" class="popup-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+
+          <!-- Content overlay -->
+          <div class="nhancode-content-overlay">
+            <!-- Code display box -->
+            <div class="nhancode-box">
+              <span class="code-popup-value">ABACA0145656</span>
+            </div>
+
+            <!-- Copy button -->
+            <a href="javascript:void(0)" class="nhancode-copy-btn" onclick="copyCode()">
+              <img src="images/button.png" alt="Sao Chép" class="nhancode-copy-img">
+              <span class="nhancode-copy-text">SAO CHÉP</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Thông Tin Thí Sinh Modal -->
+  <div class="modal fade" id="thongtinModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 900px;">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0 position-relative">
+          <!-- Background frame -->
+          <img src="images/pop up_thongtinthising.png" alt="Thông Tin Thí Sinh" class="img-fluid w-100">
+          
+          <!-- Close button -->
+          <button type="button" class="popup-close-btn thongtin-close-btn" data-bs-dismiss="modal" aria-label="Close" style="top: 4% !important; right: 2.2% !important; width: 80px !important; height: 80px !important;"></button>
+
+          <!-- Content overlay -->
+          <div class="thongtin-overlay">
+            <!-- LEFT COLUMN: Photos -->
+            <div class="thongtin-left" style="width: 49% !important;">
+              <!-- Large photo -->
+              <div class="thongtin-anhto-wrap">
+                <img src="images/anhto.png" alt="Ảnh thí sinh" class="thongtin-anhto">
+              </div>
+              <!-- 3 small photos -->
+              <div class="thongtin-anhnho-row" style="width: 100% !important; margin-left: 0 !important; gap: 1.5% !important; position: relative; top: -20px !important;">
+                <div class="thongtin-anhnho-wrap rounded-0">
+                  <img src="images/anhnho1.png" alt="Ảnh nhỏ 1" class="thongtin-anhnho rounded-0">
+                </div>
+                <div class="thongtin-anhnho-wrap rounded-0">
+                  <img src="images/anhnho2.png" alt="Ảnh nhỏ 2" class="thongtin-anhnho rounded-0">
+                </div>
+                <div class="thongtin-anhnho-wrap rounded-0">
+                  <img src="images/anhnho3.png" alt="Ảnh nhỏ 3" class="thongtin-anhnho rounded-0">
+                </div>
+              </div>
+              <p class="thongtin-note text-center fst-italic text-white fs-6" style="position: relative; top: -20px !important;">*Bắt buộc phải đăng ký đủ 4 ảnh dự thi</p>
+            </div>
+
+            <!-- RIGHT COLUMN: Info -->
+            <div class="thongtin-right">
+              <!-- Name & SBD -->
+              <div class="thongtin-info-line fw-semibold fs-6 text-white">
+                <span>Nhân Vật: <span style="color: #FFE779;">Lục Trà Bạc Hà</span></span>
+                <span class="thongtin-sbd me-4">SBD: <span style="color: #FFE779;">01239</span></span>
+              </div>
+              <div class="thongtin-info-line fw-semibold fs-6 text-white">Bang Hội: <span style="color: #FFE779;">Lạc Viên</span></div>
+              <div class="thongtin-info-line fw-semibold fs-6 text-white">Máy Chủ: <span style="color: #FFE779;">S1-Lý Bạch</span></div>
+              <div class="thongtin-info-line fw-semibold fs-6 text-white">Lời giới thiệu:</div>
+              <p class="thongtin-intro fw-medium" style="color: #FFE779 !important; font-size: 13px !important;">Xin chào, mình là [Tên nhân vật]. Mình tham gia Mister để lưu giữ lại kỉ niệm và những khoảnh khắc đẹp.</p>
+
+              <!-- Stats: Số hoa đã nhận + Hạng (all in one boxsohoa) -->
+              <div class="thongtin-stat-combined">
+                <img src="images/boxsohoa.png" alt="" class="thongtin-stat-bg">
+                <!-- Top header tabs -->
+                <span class="thongtin-stat-label-left fw-medium text-white" style="font-size: 13px !important; line-height: 100% !important; letter-spacing: 0 !important; left: 15px !important;">Số hoa đã nhận</span>
+                <span class="thongtin-stat-label-right fw-medium text-white" style="font-size: 13px !important; line-height: 100% !important; letter-spacing: 0 !important; right: -8px !important;"><img src="images/xephang.png" alt="Hạng" class="thongtin-stat-xephang-icon align-middle"> Hạng</span>
+                <!-- Bottom body values -->
+                <div class="thongtin-stat-val-left">
+                  <span class="thongtin-stat-number">9999</span>
+                  <img src="images/hoa.png" alt="Hoa" class="thongtin-stat-hoa-icon align-middle" style="width: clamp(20px, 2.5vw, 30px) !important; position: relative; left: 4px !important;">
+                </div>
+                <div class="thongtin-stat-val-right">
+                  <span class="thongtin-stat-number">77</span>
+                </div>
+              </div>
+
+              <!-- Số hoa muốn tặng -->
+              <div class="thongtin-input-label fw-semibold text-white">Số hoa muốn tặng</div>
+              <div class="thongtin-input-row">
+                <div class="thongtin-input-box">
+                  <img src="images/tihanh+-.png" alt="" class="thongtin-input-bg">
+                  <a href="javascript:void(0)" class="thongtin-minus-overlay" onclick="changeFlower(-1)">−</a>
+                  <input type="text" class="thongtin-input-number fw-semibold" value="10.000" style="font-family: 'Montserrat', sans-serif !important;">
+                  <a href="javascript:void(0)" class="thongtin-plus-overlay" onclick="changeFlower(1)">+</a>
+                </div>
+                <a href="javascript:void(0)" class="thongtin-max-btn" onclick="setMaxFlower()">
+                  <img src="images/buttonmax.png" alt="MAX" class="thongtin-max-img">
+                </a>
+              </div>
+
+              <!-- Action buttons -->
+              <div class="thongtin-action-row" style="position: relative; left: -15px;">
+                <a href="javascript:void(0)" class="thongtin-action-btn" style="width: 48% !important;" onclick="tangHoa()">
+                  <img src="images/buttontanghoa.png" alt="Tặng Hoa" class="thongtin-action-img">
+                </a>
+                <a href="javascript:void(0)" class="thongtin-action-btn" style="width: 48% !important;" onclick="lichSuTang()">
+                  <img src="images/buttonlstang.png" alt="Lịch Sử Tặng" class="thongtin-action-img">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Thông Báo Modal -->
+  <div class="modal fade" id="thongbaoModal" tabindex="-1" aria-hidden="true" style="z-index: 1060;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 380px;">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0 position-relative">
+          <!-- Background frame -->
+          <img src="images/popupthongbao.png" alt="Thông Báo" class="img-fluid w-100">
+          
+          <!-- Close button -->
+          <button type="button" class="popup-close-btn" data-bs-dismiss="modal" aria-label="Close" style="top: 11% !important; right: 7.5% !important; width: 55px !important; height: 55px !important;"></button>
+
+          <!-- Content overlay -->
+          <div class="position-absolute top-50 start-50 translate-middle w-100 px-4">
+            <h3 class="text-center text-white fw-bold fs-6 text-uppercase m-0" style="font-family: 'Montserrat', sans-serif; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); letter-spacing: 1px;">
+              ĐÃ TẶNG HOA THÀNH CÔNG
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lịch Sử Tặng Modal -->
+  <div class="modal fade" id="lichsutangModal" tabindex="-1" aria-hidden="true" style="z-index: 1060;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0 position-relative">
+          <!-- Background frame -->
+          <img src="images/popuplichsutang.png" alt="Lịch Sử Tặng" class="img-fluid w-100">
+          
+          <!-- Close button -->
+          <button type="button" class="popup-close-btn" data-bs-dismiss="modal" aria-label="Close" style="top: 11% !important; right: 7.5% !important; width: 55px !important; height: 55px !important;"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript for Copy Code and Dynamic Data -->
+  <script>
+    const nhancodeModal = document.getElementById('nhancodeModal');
+    if (nhancodeModal) {
+      nhancodeModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        if (button) {
+          const code = button.getAttribute('data-code');
+          const codeSpan = nhancodeModal.querySelector('.code-popup-value');
+          if (codeSpan && code) {
+            codeSpan.textContent = code;
+          }
+        }
+      });
+    }
+
+    function copyCode() {
+      const codeText = document.querySelector('.code-popup-value')?.textContent;
+      if (codeText) {
+        navigator.clipboard.writeText(codeText).catch(err => {
+          console.error('Không thể sao chép: ', err);
+        });
+      }
+    }
+
+    // Thông Tin Thí Sinh - Flower input controls
+    function formatNumber(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    function changeFlower(delta) {
+      const input = document.querySelector('.thongtin-input-number');
+      if (input) {
+        let val = parseInt(input.value.replace(/\./g, '')) || 0;
+        val = Math.max(1, val + delta);
+        input.value = formatNumber(val);
+      }
+    }
+
+    function setMaxFlower() {
+      const input = document.querySelector('.thongtin-input-number');
+      if (input) {
+        input.value = "99.999";
+      }
+    }
+
+    function tangHoa() {
+      const thongbaoModalEl = document.getElementById('thongbaoModal');
+      let thongbaoModalInstance = bootstrap.Modal.getInstance(thongbaoModalEl);
+      if (!thongbaoModalInstance) {
+        thongbaoModalInstance = new bootstrap.Modal(thongbaoModalEl);
+      }
+      thongbaoModalInstance.show();
+    }
+
+    function lichSuTang() {
+      const lichsutangModalEl = document.getElementById('lichsutangModal');
+      let lichsutangModalInstance = bootstrap.Modal.getInstance(lichsutangModalEl);
+      if (!lichsutangModalInstance) {
+        lichsutangModalInstance = new bootstrap.Modal(lichsutangModalEl);
+      }
+      lichsutangModalInstance.show();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const flowerInput = document.querySelector('.thongtin-input-number');
+      if (flowerInput) {
+        flowerInput.addEventListener('input', function () {
+          let rawVal = this.value.replace(/\D/g, '');
+          let num = parseInt(rawVal) || 0;
+          if (num < 1) {
+            this.value = '';
+          } else {
+            this.value = formatNumber(num);
+          }
+        });
+        
+        flowerInput.addEventListener('blur', function () {
+          let rawVal = this.value.replace(/\D/g, '');
+          let num = parseInt(rawVal) || 1;
+          this.value = formatNumber(num);
+        });
+      }
+    });
+  </script>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

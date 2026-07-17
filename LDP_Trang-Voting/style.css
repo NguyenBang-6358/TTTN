@@ -1,0 +1,1945 @@
+/* --- GENERAL STYLES & VARIABLES --- */
+:root {
+  --primary-purple: #7b008d;
+  --dark-purple: #0b021d;
+  --neon-pink: #d946ef;
+  --neon-cyan: #06b6d4;
+  --neon-yellow: #fbbf24;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-purple);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Fonts */
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Page wrapper containing the huge background */
+.main-page-wrapper {
+  background: url('images/BGTRANGVOTING.png') no-repeat top center;
+  background-size: 100% 100%;
+  width: 100%;
+  min-height: 244.79vw;
+  position: relative;
+  margin-top: 30px;
+}
+
+/* --- HEADER NAVBAR STYLES --- */
+.main-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #8A008F !important;
+  height: 60px;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.brand-logo {
+  width: 200px;
+  height: 56px;
+  position: relative;
+  top: 2px;
+}
+
+.navbar-brand {
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-left: 120px !important;
+}
+
+.navbar-container {
+  max-width: 1172px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: 100%;
+}
+
+.navbar-right-group {
+  margin-right: 40px !important;
+}
+
+.social-icon-btn {
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-btn-img-wrapper {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.login-btn-img {
+  max-height: 40px;
+  width: auto;
+}
+
+.user-profile-badge {
+  background: rgba(123, 0, 141, 0.5);
+  border: 1px solid var(--neon-pink);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(217, 70, 239, 0.2);
+}
+
+.logout-mini-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 5px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.logout-mini-btn:hover {
+  color: #ff4d4d;
+}
+
+/* --- SECTION 1: HERO SECTION --- */
+#hero {
+  position: relative;
+  width: 100%;
+}
+
+.logo-game-container {
+  position: relative;
+  margin-top: 40px;
+  z-index: 10;
+}
+
+.logo-game {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}
+
+.hero-title-container {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  filter: drop-shadow(0 0 15px rgba(123, 0, 141, 0.6));
+}
+
+.hero-badge-capsule {
+  background: linear-gradient(90deg, rgba(147, 51, 234, 0.85), rgba(219, 39, 119, 0.85));
+  border: 1.5px solid var(--neon-pink);
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 8px 32px;
+  letter-spacing: 1px;
+  display: inline-block;
+  box-shadow: 0 0 15px rgba(219, 39, 119, 0.4);
+  /* Custom clip-path for angled gaming corners */
+  clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(219, 39, 119, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 20px rgba(219, 39, 119, 0.8);
+  }
+}
+
+/* Hero Button Panel */
+.hero-buttons-panel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 180px;
+  margin-top: auto;
+  /* Push to bottom of the section height */
+  margin-bottom: 20px;
+}
+
+.buttons-bg-bar {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 900px;
+  height: 60px;
+  background: url('images/khungdautrang.png') no-repeat center;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.buttons-overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.buttons-inner-wrapper {
+  max-width: 950px;
+}
+
+.btn-group-left,
+.btn-group-right {
+  width: 38%;
+}
+
+.btn-center-vote {
+  width: 24%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.action-btn-img-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+}
+
+.vote-now-btn-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  position: relative;
+}
+
+.vote-now-btn-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/votengay.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+  transition: opacity 1.2s ease;
+  z-index: 2;
+  transform: translateY(-28px);
+}
+
+.vote-now-btn-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/votengay.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: hue-rotate(290deg) saturate(1.5) brightness(0.95);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  z-index: 2;
+  transform: translateY(-28px);
+}
+
+.vote-now-btn-btn:hover::before {
+  opacity: 0;
+}
+
+.vote-now-btn-btn:hover::after {
+  opacity: 1;
+}
+
+.btn-nhan-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+}
+
+.btn-nhan-img {
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+.btn-nhan-btn:hover .btn-nhan-img {
+  filter: hue-rotate(-55deg) saturate(1.0) brightness(1.05);
+}
+
+.action-btn-img {
+  max-height: 52px;
+  width: auto;
+}
+
+.vote-now-btn-img {
+  max-height: 160px;
+  width: auto;
+  transform: translateY(-28px);
+  visibility: hidden;
+}
+
+@keyframes pulseVoteBtn {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.8));
+  }
+}
+
+/* --- SECTION 2: CANDIDATES SECTION --- */
+#candidates {
+  position: relative;
+}
+
+.section-title-img {
+  max-height: 90px;
+  width: auto;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.4));
+}
+
+.filter-row {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.select-group-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Custom styling for drop-downs using box.png */
+.select-custom {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='0,0 24,0 12,24' fill='%23D9D9D9'/%3E%3C/svg%3E"), url('images/box.png') !important;
+  background-repeat: no-repeat, no-repeat !important;
+  background-position: right 24px center, center !important;
+  background-size: 16px 16px, 100% 100% !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 16px;
+  height: 51px;
+  padding: 0 40px 0 20px !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  cursor: pointer;
+  pointer-events: auto !important;
+  background-color: transparent !important;
+  transition: filter 0.3s ease !important;
+}
+
+.select-custom:hover {
+  filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.8)) !important;
+}
+
+.select-custom option {
+  background-color: var(--dark-purple) !important;
+  color: #ffffff !important;
+  font-weight: normal;
+}
+
+.select-custom:focus {
+  outline: none !important;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6) !important;
+}
+
+/* Custom styling for search input using box trắng.png */
+.input-custom {
+  background-image: url('images/box%20tr%E1%BA%AFng.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  border: none !important;
+  color: #0b021d !important;
+  font-weight: 700;
+  font-size: 13px;
+  height: 51px;
+  padding: 0 45px 0 20px !important;
+  background-color: transparent !important;
+  transition: filter 0.3s ease !important;
+}
+
+.input-custom:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) !important;
+}
+
+.input-custom::placeholder {
+  color: rgba(11, 2, 29, 0.65) !important;
+}
+
+.input-custom:focus {
+  outline: none !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6) !important;
+}
+
+.search-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0b021d;
+  font-size: 18px;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+/* Candidates Grid Card styling */
+.candidate-card-wrapper {
+  cursor: pointer;
+}
+
+.candidate-card {
+  background: url('images/card.png') no-repeat center;
+  background-size: 100% 100%;
+  aspect-ratio: 430/327;
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.45));
+  transition: filter 0.3s ease;
+}
+
+.candidate-card-wrapper:hover .candidate-card {
+  filter: drop-shadow(0 0 15px rgba(217, 70, 239, 0.6));
+}
+
+.card-badges {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.card-badge-left,
+.card-badge-right {
+  display: contents !important;
+}
+
+.badge-icon-left {
+  position: absolute !important;
+  left: 2.325% !important;
+  top: 63% !important;
+  width: 6.28% !important;
+  height: 8.25% !important;
+  object-fit: contain !important;
+}
+
+.badge-icon-right {
+  position: absolute !important;
+  right: 2.325% !important;
+  top: 63% !important;
+  width: 6.28% !important;
+  height: 8.25% !important;
+  object-fit: contain !important;
+}
+
+.card-badge-left .badge-number {
+  position: absolute !important;
+  left: 9.535% !important;
+  top: 63.6% !important;
+  width: 9.77% !important;
+  height: 8.25% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 15px !important;
+}
+
+.card-badge-right .badge-number {
+  position: absolute !important;
+  left: 74.41% !important;
+  top: 63% !important;
+  width: 14.18% !important;
+  height: 8.87% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important;
+}
+
+.badge-number {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.card-info {
+  display: contents !important;
+}
+
+.candidate-name {
+  position: absolute !important;
+  left: 16.98% !important;
+  top: 79.2% !important;
+  width: 66.05% !important;
+  height: 8.87% !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  color: #FFE779 !important;
+  text-transform: none !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.candidate-server {
+  position: absolute !important;
+  left: 32.09% !important;
+  top: 89.29% !important;
+  width: 36.05% !important;
+  height: 6.12% !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.rewards-subtitle {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  font-size: 20px !important;
+  text-shadow: none !important;
+}
+
+/* Pagination styles */
+.pagination-container {
+  position: relative !important;
+  z-index: 99 !important;
+}
+
+.page-btn-lon {
+  background: url('images/boxlon.png') no-repeat center;
+  background-size: 110px 38px;
+  width: 126px;
+  height: 54px;
+  margin: -8px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s;
+  background-color: rgba(0, 0, 0, 0.01) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.page-btn-trung {
+  background: url('images/boxtrung.png') no-repeat center;
+  background-size: 80px 38px;
+  width: 96px;
+  height: 54px;
+  margin: -8px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s;
+  background-color: rgba(0, 0, 0, 0.01) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.page-btn-nho {
+  background: url('images/boxnho.png') no-repeat center;
+  background-size: 38px 38px;
+  width: 54px;
+  height: 54px;
+  margin: -8px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  transition: transform 0.2s ease, filter 0.2s;
+  background-color: rgba(0, 0, 0, 0.01) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.page-btn-lon:hover,
+.page-btn-trung:hover,
+.page-btn-nho:hover {
+  filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.9));
+}
+
+.page-btn-nho.active {
+  color: #00ffff !important;
+  filter: brightness(1.3) drop-shadow(0 0 6px #00ffff);
+}
+
+/* --- SECTION 3: REWARDS SECTION --- */
+#rewards {
+  position: relative;
+}
+
+/* Progress bar outer wrapper for side margins */
+.progress-bar-outer-wrapper {
+  max-width: 800px;
+  margin: 60px auto 40px auto;
+  padding: 0 40px;
+}
+
+/* Rainbow neon progress bar */
+.progress-bar-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 38px;
+  background: url('images/thanh.png') no-repeat center;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  padding: 6px 12px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink), var(--neon-yellow));
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  transition: width 1s cubic-bezier(0.1, 0.8, 0.3, 1);
+}
+
+.milestone-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.milestone-flower {
+  width: 42px;
+  height: 28px;
+  background: url('images/hoa%202.png') no-repeat center;
+  background-size: contain;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s;
+  filter: drop-shadow(0 0 3px rgba(255, 102, 204, 0.6));
+}
+
+
+
+.milestone-label {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 6px;
+  white-space: nowrap;
+  text-shadow: none !important;
+}
+
+/* Reward Gift Boxes styles */
+.gift-box-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.gift-box-item {
+  background: url('images/boxitem.png') no-repeat center;
+  background-size: 100% 100%;
+  width: 209px;
+  height: 249px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.3s;
+}
+
+
+
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.gift-slot {
+  width: 74px;
+  height: 74px;
+  border: none;
+  background: #D9D9D9;
+  border-radius: 0;
+}
+
+
+
+.btn-nhan-img {
+  max-height: 48px;
+  width: auto;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+
+
+/* --- SECTION 4: LEADERBOARD SECTION --- */
+#leaderboard {
+  position: relative;
+}
+
+.leaderboard-wrapper {
+  width: 100%;
+  max-width: 960px;
+  height: 540px;
+  /* Precise aspect ratio match for 1620x911 */
+  margin: 30px auto;
+  padding: 45px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* Frame layer — blends with page background via lighten */
+.leaderboard-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/khungbxh.png') no-repeat center;
+  background-size: 100% 100%;
+  mix-blend-mode: lighten;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content layers — render ABOVE the blended frame, normal compositing */
+.bxh-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.bxh-tab-img {
+  height: 38px;
+  width: auto;
+  transition: filter 0.2s ease;
+  opacity: 1;
+}
+
+.bxh-tab-btn.active .bxh-tab-img {
+  filter: brightness(1.2) drop-shadow(0 0 8px rgba(0, 255, 255, 0.9));
+}
+
+.bxh-tab-btn {
+  cursor: pointer;
+}
+
+.bxh-tab-btn:hover .bxh-tab-img {
+  filter: hue-rotate(45deg) saturate(1.3) brightness(1.05);
+}
+
+.bxh-table-container {
+  max-height: 380px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom scrollbar for table container */
+.bxh-table-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bxh-table-container::-webkit-scrollbar-track {
+  background: rgba(11, 2, 29, 0.5);
+}
+
+.bxh-table-container::-webkit-scrollbar-thumb {
+  background: var(--neon-pink);
+  border-radius: 3px;
+}
+
+#bxh-table {
+  border-collapse: separate !important;
+  border-spacing: 0 10px !important;
+}
+
+#bxh-table tbody tr,
+#bxh-table td {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+#bxh-table thead tr {
+  background-color: rgba(31, 70, 180, 0.7) !important;
+}
+
+#bxh-table thead th {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 16px;
+  color: #FFFFFF !important;
+  line-height: 1 !important;
+  letter-spacing: 0% !important;
+}
+
+#bxh-table td,
+#bxh-table td span {
+  padding: 12px 6px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px;
+  color: #FFFFFF !important;
+  line-height: 1 !important;
+  letter-spacing: 0% !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.rank-crown {
+  height: 28px;
+  width: auto;
+  max-width: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.rank-number {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+.player-name {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Hero Action Buttons Hover Tint Effects */
+.action-btn-img-btn {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.action-btn-img {
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+.action-btn-img-btn:hover .action-btn-img {
+  filter: hue-rotate(45deg) saturate(1.3) brightness(1.05);
+}
+
+.player-server {
+  color: #d8b4fe;
+  font-size: 13px;
+}
+
+/* --- MODALS GENERAL STYLINGS --- */
+.custom-modal .modal-content {
+  background-color: rgba(15, 6, 36, 0.95);
+  border: 1.5px solid var(--neon-pink);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(219, 39, 119, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.modal-candidate-pic-container {
+  width: 150px;
+  height: 114px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px solid var(--neon-cyan);
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+.modal-candidate-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bg-purple-badge {
+  background: rgba(123, 0, 141, 0.5);
+  border: 1px solid var(--neon-pink);
+}
+
+.btn-vote-gradient {
+  background: linear-gradient(90deg, #9333ea, #db2777);
+  border: 1px solid #f472b6;
+  color: white;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.btn-vote-gradient:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(219, 39, 119, 0.7);
+  color: white;
+}
+
+.btn-outline-purple {
+  background: rgba(123, 0, 141, 0.15);
+  border: 1.5px solid var(--neon-pink);
+  color: white;
+  transition: all 0.2s;
+}
+
+.btn-outline-purple:hover {
+  background: rgba(123, 0, 141, 0.5);
+  border-color: #ff00ff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(219, 39, 119, 0.5);
+}
+
+/* --- RESPONSIVE MEDIA QUERIES (Bootstrap Adaptations) --- */
+
+/* Desktop view heights alignment */
+@media (min-width: 992px) {
+  #hero {
+    height: 51.04vw;
+  }
+
+  .logo-game-container {
+    position: relative;
+    top: -10vw;
+    z-index: 1100;
+  }
+
+  .logo-game {
+    width: 24.22vw;
+    height: 24.22vw;
+  }
+
+  .hero-title-container {
+    max-width: 39.06vw;
+    margin-top: -10vw !important;
+  }
+
+  .hero-title {
+    width: 39.06vw;
+    height: 24.43vw;
+  }
+
+  .hero-buttons-panel-container {
+    top: 7vw !important;
+    max-width: 74.95vw !important;
+    height: 9.38vw !important;
+  }
+
+  .buttons-bg-bar {
+    width: 74.95vw !important;
+    max-width: none !important;
+    height: 5.94vw !important;
+    bottom: 0 !important;
+  }
+
+  .buttons-inner-wrapper {
+    max-width: 74.95vw !important;
+  }
+
+  .buttons-overlay-content {
+    align-items: flex-end !important;
+    padding-bottom: 0.65vw !important;
+  }
+
+  .btn-group-left,
+  .btn-group-right {
+    width: 40% !important;
+  }
+
+  .btn-center-vote {
+    width: 20% !important;
+  }
+
+  .vote-now-btn-img {
+    width: 14.27vw !important;
+    height: 13.23vw !important;
+    max-height: none !important;
+    transform: translateY(-1.5vw) !important;
+  }
+
+  .action-btn-img {
+    width: 12.81vw !important;
+    height: 4.64vw !important;
+    max-height: none !important;
+    transform: translateY(1.2vw) !important;
+  }
+
+  #candidates {
+    height: 82vw !important;
+    padding-top: 7.29vw !important;
+  }
+
+  .section-title-img {
+    width: 31.25vw !important;
+    height: 7.55vw !important;
+    max-height: none !important;
+  }
+
+  .section-title-container {
+    margin-bottom: 3.2vw !important;
+  }
+
+  .filter-row {
+    max-width: 68.1vw !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0 !important;
+    margin-bottom: 0.4vw !important;
+  }
+
+  .select-group-wrapper {
+    flex-direction: row !important;
+    width: auto !important;
+    gap: 0.52vw !important;
+  }
+
+  .select-custom {
+    width: 15.625vw !important;
+    height: 2.344vw !important;
+    font-size: 0.833vw !important;
+    padding: 0 2vw 0 1vw !important;
+    background-size: 0.833vw 0.833vw, 100% 100% !important;
+    background-position: right 1.25vw center, center !important;
+  }
+
+  .search-container {
+    width: 18.23vw !important;
+  }
+
+  .input-custom {
+    width: 100% !important;
+    height: 2.5vw !important;
+    font-size: 0.833vw !important;
+    padding: 0 2.5vw 0 1.25vw !important;
+  }
+
+  .search-icon {
+    right: 1.2vw !important;
+    font-size: 0.94vw !important;
+  }
+
+  .candidate-card {
+    max-width: 22.395vw !important;
+    aspect-ratio: 430/327 !important;
+  }
+
+  #candidates-grid {
+    max-width: 68.1vw !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
+  }
+
+  #candidates-grid>.col {
+    width: 22.395vw !important;
+    flex: 0 0 auto !important;
+    padding: 0 !important;
+    margin-bottom: -0.6vw !important;
+  }
+
+  #rewards {
+    height: 56.25vw !important;
+    padding-top: 6.77vw !important;
+  }
+
+  #rewards>.container {
+    transform: translateY(1.5vw) !important;
+  }
+
+  #rewards .section-title-container {
+    margin-bottom: 1.51vw !important;
+  }
+
+  .rewards-subtitle {
+    font-size: 1.666vw !important;
+    margin-bottom: 4.42vw !important;
+  }
+
+  .progress-bar-outer-wrapper {
+    max-width: none !important;
+    width: 68.75vw !important;
+    margin: 0 auto 3vw auto !important;
+    padding: 0 !important;
+  }
+
+  .progress-bar-container {
+    max-width: none !important;
+    width: 100% !important;
+    height: 3.85vw !important;
+    padding: 0.31vw 0.62vw !important;
+  }
+
+  .milestone-flower {
+    width: 13.125vw !important;
+    height: 8.75vw !important;
+  }
+
+  .milestone-label {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 50% !important;
+    margin-top: 4.8vw !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.666vw !important;
+  }
+
+  #rewards .row {
+    width: 61.04vw !important;
+    margin: 5.5vw auto 0 auto !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .gift-box-card {
+    width: 10.885vw !important;
+    flex: 0 0 auto !important;
+    padding: 0 !important;
+    gap: 1.5vw !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .gift-box-card:nth-child(2) {
+    transform: translateX(1vw) !important;
+  }
+
+  .gift-box-card:nth-child(3) {
+    transform: translateX(2vw) !important;
+  }
+
+  .gift-box-card:nth-child(4) {
+    transform: translateX(3vw) !important;
+  }
+
+  .gift-box-item {
+    max-width: none !important;
+    width: 10.885vw !important;
+    height: 12.97vw !important;
+  }
+
+  .gift-grid {
+    gap: 0.52vw !important;
+    padding: 1.04vw !important;
+  }
+
+  .gift-slot {
+    width: 3.854vw !important;
+    height: 3.854vw !important;
+  }
+
+  .btn-nhan-img {
+    max-height: none !important;
+    width: 13.02vw !important;
+    height: 3.91vw !important;
+  }
+
+  #leaderboard {
+    height: 72.40vw;
+    padding-top: 1.5vw !important;
+  }
+
+  #leaderboard .section-title-container {
+    margin-top: 6vw !important;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -5.5vw !important;
+  }
+
+  .leaderboard-wrapper {
+    max-width: 1250px !important;
+    height: 720px !important;
+    padding: 9.74vw 4.69vw 2.86vw 4.69vw !important;
+    margin-top: -5vw !important;
+  }
+
+  .bxh-tabs {
+    margin-top: -2vw !important;
+    margin-bottom: 2.5vw !important;
+  }
+
+  .bxh-tab-img {
+    width: 16.25vw !important;
+    max-width: 312px !important;
+    height: 4.375vw !important;
+    max-height: 84px !important;
+  }
+
+  .card-badge-left .badge-number {
+    font-size: 1.14vw !important;
+  }
+
+  .card-badge-right .badge-number {
+    font-size: 1.25vw !important;
+  }
+
+  .candidate-name {
+    font-size: 1.25vw !important;
+  }
+
+  .candidate-server {
+    font-size: 0.83vw !important;
+  }
+
+  #bxh-table {
+    border-spacing: 0 0.9vw !important;
+  }
+
+  #bxh-table thead th {
+    font-size: 16px !important;
+    height: 3.65vw !important;
+    max-height: 70px !important;
+    line-height: 3.65vw !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #bxh-table thead tr {
+    background: linear-gradient(90deg, transparent 1.5vw, rgba(31, 70, 180, 0.7) 1.5vw, rgba(31, 70, 180, 0.7) calc(100% - 1.5vw), transparent calc(100% - 1.5vw)) !important;
+  }
+
+  #bxh-table td {
+    padding-top: 0.4vw !important;
+    padding-bottom: 0.4vw !important;
+  }
+
+  #bxh-table td,
+  #bxh-table td span {
+    font-size: 19px !important;
+  }
+
+  .bxh-table-container {
+    max-height: 480px !important;
+    padding-left: 3vw !important;
+    padding-right: 3vw !important;
+  }
+
+  .rank-crown {
+    width: 4.16vw !important;
+    max-width: 80px !important;
+    height: 3.02vw !important;
+    max-height: 58px !important;
+  }
+
+  #bxh-table td .rank-number {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+  }
+}
+
+/* Medium desktops and tablet adaptations */
+@media (max-width: 991px) {
+  .main-page-wrapper {
+    background-size: 100% 100%;
+    min-height: auto;
+  }
+
+  #hero,
+  #candidates,
+  #rewards,
+  #leaderboard {
+    height: auto;
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .hero-buttons-panel-container {
+    height: auto;
+    margin-top: 40px;
+  }
+
+  .buttons-bg-bar {
+    display: none;
+    /* Hide decorative graphic bar on mobile for cleanliness */
+  }
+
+  .buttons-overlay-content {
+    position: static;
+    height: auto;
+  }
+
+  .buttons-inner-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .btn-group-left,
+  .btn-group-right {
+    width: 100%;
+    justify-content: center !important;
+  }
+
+  .btn-center-vote {
+    width: 100%;
+  }
+
+  .vote-now-btn-img {
+    transform: none;
+    max-height: 120px;
+  }
+
+  .vote-now-btn-img:hover {
+    transform: scale(1.05);
+  }
+
+  .leaderboard-wrapper {
+    height: auto;
+    padding: 30px 20px;
+    background-size: 100% 100%;
+  }
+
+  .bxh-tabs {
+    flex-wrap: wrap;
+  }
+
+  .bxh-tab-img {
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    max-height: 150px;
+  }
+
+  .brand-logo {
+    max-height: 35px;
+  }
+
+  .filter-row>div {
+    margin-bottom: 5px;
+  }
+
+  .progress-bar-outer-wrapper {
+    padding: 0 15px;
+  }
+
+  .milestone-flower {
+    width: 32px;
+    height: 32px;
+  }
+
+  .milestone-label {
+    font-size: 10px;
+  }
+
+  .gift-grid {
+    gap: 8px;
+    padding: 18px;
+  }
+
+  .gift-slot {
+    width: 46px;
+    height: 46px;
+  }
+
+  .gift-box-item {
+    width: 180px;
+    height: 215px;
+  }
+}
+
+/* ===== HOA FREE POPUP STYLES ===== */
+.popup-close-btn {
+  position: absolute;
+  top: 12%;
+  right: 7.5%;
+  width: 55px;
+  height: 55px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+}
+
+.popup-close-btn:hover {
+  opacity: 0.7;
+}
+
+.hoafree-content-overlay {
+  position: absolute;
+  top: 17%;
+  left: 14%;
+  width: 72%;
+  bottom: 13%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+.hoafree-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.hoafree-box-wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hoafree-box-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hoafree-box-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: clamp(10px, 1.6vw, 18px);
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+.hoafree-nhan-btn {
+  position: absolute;
+  right: 2.5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25%;
+  display: block;
+  text-decoration: none;
+  z-index: 6;
+}
+
+.hoafree-nhan-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.hoafree-nhan-btn:hover .hoafree-nhan-img {
+  filter: hue-rotate(-55deg) saturate(1.0) brightness(1.05);
+}
+
+/* ===== NHẬN CODE POPUP STYLES ===== */
+.nhancode-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.nhancode-box {
+  position: absolute;
+  top: 47.5%;
+  left: 14%;
+  width: 72%;
+  height: 13%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.code-popup-value {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(14px, 2.3vw, 26px);
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.nhancode-copy-btn {
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  display: block;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.nhancode-copy-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.nhancode-copy-btn:hover .nhancode-copy-img {
+  filter: hue-rotate(-55deg) saturate(1.0) brightness(1.05);
+}
+
+.nhancode-copy-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(12px, 1.8vw, 20px);
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  padding-bottom: 2%;
+  /* Offset slightly for visual centering inside button graphic */
+}
+
+/* ===== THÔNG TIN THÍ SINH POPUP STYLES ===== */
+.thongtin-overlay {
+  position: absolute;
+  top: 18.5%;
+  left: 7.75%;
+  right: 5%;
+  bottom: 6%;
+  display: flex;
+  gap: 3%;
+  z-index: 5;
+}
+
+/* -- Left column: Photos -- */
+.thongtin-left {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+}
+
+.thongtin-anhto-wrap {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.thongtin-anhto {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+}
+
+.thongtin-anhto-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: #ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(7px, 0.9vw, 11px);
+  padding: 6px 8px 4px;
+  text-align: left;
+}
+
+.thongtin-anhnho-row {
+  display: flex;
+  gap: 1.5%;
+  width: 100%;
+  margin-left: 0;
+  position: relative;
+  top: -20px;
+}
+
+.thongtin-anhnho-wrap {
+  flex: 1;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.thongtin-anhnho {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+
+
+.thongtin-note {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #FFFFFF;
+  margin: 0;
+  padding-top: 2px;
+  text-align: center;
+  position: relative;
+  top: -20px;
+}
+
+/* -- Right column: Info -- */
+.thongtin-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 1%;
+}
+
+.thongtin-info-line {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  gap: 15px;
+}
+
+.thongtin-info-line strong {
+  color: #e0e0e0;
+}
+
+.thongtin-sbd {
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+.thongtin-intro {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #FFE779;
+  margin: 2px 0 6px;
+  line-height: 1.4;
+}
+
+/* Stats combined box */
+.thongtin-stat-combined {
+  position: relative;
+  width: 240px;
+  max-width: 65%;
+  margin-bottom: 6px;
+}
+
+.thongtin-stat-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Labels in top header tabs (~top 30%) */
+.thongtin-stat-label-left,
+.thongtin-stat-label-right {
+  position: absolute;
+  top: 0;
+  height: 32%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.thongtin-stat-label-left {
+  left: 15px;
+  width: 55%;
+}
+
+.thongtin-stat-label-right {
+  right: -8px;
+  width: 45%;
+}
+
+/* Values in body area (~bottom 68%) */
+.thongtin-stat-val-left,
+.thongtin-stat-val-right {
+  position: absolute;
+  bottom: 0;
+  height: 68%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.thongtin-stat-val-left {
+  left: 0;
+  width: 55%;
+}
+
+.thongtin-stat-val-right {
+  right: 0;
+  width: 45%;
+}
+
+.thongtin-stat-number {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: clamp(16px, 2.2vw, 28px);
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.thongtin-stat-hoa-icon {
+  width: clamp(20px, 2.5vw, 30px);
+  height: auto;
+  position: relative;
+  left: 4px;
+}
+
+.thongtin-stat-xephang-icon {
+  width: clamp(12px, 1.5vw, 18px);
+  height: auto;
+  margin-right: 4px;
+}
+
+/* Input row */
+.thongtin-input-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(9px, 1vw, 13px);
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.thongtin-input-row {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+  margin-bottom: 10px;
+}
+
+.thongtin-input-box {
+  position: relative;
+  width: 200px;
+  max-width: 55%;
+}
+
+.thongtin-input-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* − overlay on left tab of tihanh+-.png */
+.thongtin-minus-overlay,
+.thongtin-plus-overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(14px, 1.6vw, 22px);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.thongtin-minus-overlay {
+  left: 0;
+  width: 15%;
+}
+
+.thongtin-plus-overlay {
+  right: 0;
+  width: 15%;
+}
+
+.thongtin-minus-overlay:hover,
+.thongtin-plus-overlay:hover {
+  filter: brightness(1.3);
+  color: #ffffff;
+}
+
+.thongtin-input-number {
+  position: absolute;
+  left: 15%;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: clamp(14px, 1.8vw, 22px);
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  -moz-appearance: textfield;
+}
+
+.thongtin-input-number::-webkit-outer-spin-button,
+.thongtin-input-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.thongtin-max-btn {
+  width: 14%;
+  flex-shrink: 0;
+  display: block;
+  text-decoration: none;
+}
+
+.thongtin-max-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.thongtin-max-btn:hover .thongtin-max-img {
+  filter: brightness(1.2);
+}
+
+/* Action buttons */
+.thongtin-action-row {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+  margin-right: 25%;
+  margin-top: auto;
+  margin-bottom: 50px;
+}
+
+.thongtin-action-btn {
+  width: 48%;
+  display: block;
+  text-decoration: none;
+}
+
+.thongtin-action-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.thongtin-action-btn:hover .thongtin-action-img {
+  filter: hue-rotate(-55deg) saturate(1.0) brightness(1.05);
+}
+
+.thongtin-close-btn {
+  top: 4% !important;
+  right: 2.2% !important;
+  width: 80px !important;
+  height: 80px !important;
+}
