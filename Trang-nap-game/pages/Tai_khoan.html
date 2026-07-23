@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tài Khoản - MyE Portal</title>
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS for Header, Footer & Account Page -->
+  <link rel="stylesheet" href="../assets/css/Nap_game.css">
+  <link rel="stylesheet" href="../assets/css/Tai_khoan.css">
+</head>
+
+<body>
+
+  <!-- Dynamic Header Container -->
+  <div id="header-container">
+    <header class="mye-header py-3 bg-white border-bottom shadow-sm sticky-top">
+      <div class="container d-flex align-items-center justify-content-between">
+        <!-- Brand Logo -->
+        <a href="Nap_game.html" class="d-flex align-items-center text-decoration-none">
+          <img src="../assets/images/Nap_Game/logo.png" alt="MyE Logo" class="mye-logo" height="52">
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="d-none d-md-flex align-items-center gap-4">
+          <a href="#" class="nav-link">Trang Chủ</a>
+          <a href="#" class="nav-link">Trò Chơi</a>
+          <a href="Nap_game.html" class="nav-link">Nạp Game</a>
+          <a href="#" class="nav-link">Tin Tức</a>
+          <a href="#" class="nav-link">Hỗ Trợ</a>
+        </nav>
+
+        <!-- Login Button / User Profile Area -->
+        <div class="d-flex align-items-center" id="header-auth-container">
+          <a href="#" class="btn-login-orange" id="btn-login">ĐĂNG NHẬP</a>
+
+          <!-- Logged In User Profile Bar -->
+          <div class="user-profile-header position-relative d-none align-items-center gap-2" id="user-profile-bar">
+            <div class="d-flex align-items-center gap-2 cursor-pointer" id="user-profile-toggle">
+              <div class="user-avatar">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="22" cy="22" r="22" fill="#1CB0F6" />
+                  <circle cx="22" cy="22" r="13" fill="#FCD535" />
+                  <path d="M15.5 17C16.5 15 19.5 15 20.5 17" stroke="#7A5200" stroke-width="1.8"
+                    stroke-linecap="round" />
+                  <path d="M23.5 17C24.5 15 27.5 15 28.5 17" stroke="#7A5200" stroke-width="1.8"
+                    stroke-linecap="round" />
+                  <path d="M16 22.5C16 26 28 26 28 22.5" fill="#D82A2A" />
+                  <path d="M18.5 23.5C18.5 27 25.5 27 25.5 23.5" fill="#FF5C5C" />
+                </svg>
+              </div>
+              <div class="user-info-text text-start">
+                <div class="username-text">myepro01</div>
+                <div class="mye-id-text">MyE ID: 00123</div>
+              </div>
+            </div>
+
+            <div class="user-coin-balance d-flex align-items-center gap-2 ms-3">
+              <img src="../assets/images/Nap_Game/coin_M.png" alt="Coin" class="mye-gold-coin-img">
+              <span class="coin-amount">1000</span>
+            </div>
+
+            <!-- Popup Dropdown -->
+            <div class="user-dropdown-menu d-none" id="user-dropdown-menu">
+              <div class="dropdown-header-user d-flex align-items-center gap-2 p-3">
+                <div class="user-avatar-sm">
+                  <svg width="34" height="34" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22" cy="22" r="22" fill="#1CB0F6" />
+                    <circle cx="22" cy="22" r="13" fill="#FCD535" />
+                    <path d="M15.5 17C16.5 15 19.5 15 20.5 17" stroke="#7A5200" stroke-width="1.8"
+                      stroke-linecap="round" />
+                    <path d="M23.5 17C24.5 15 27.5 15 28.5 17" stroke="#7A5200" stroke-width="1.8"
+                      stroke-linecap="round" />
+                    <path d="M16 22.5C16 26 28 26 28 22.5" fill="#D82A2A" />
+                    <path d="M18.5 23.5C18.5 27 25.5 27 25.5 23.5" fill="#FF5C5C" />
+                  </svg>
+                </div>
+                <div class="text-start">
+                  <div class="dropdown-username">myepro001</div>
+                  <div class="dropdown-mye-id">MyE ID: 00123</div>
+                </div>
+              </div>
+              <div class="dropdown-divider-line"></div>
+              <div class="dropdown-menu-list" style="padding: 8px 0 !important; background: #ffffff !important;">
+                <a href="#" onclick="return false;" class="dropdown-item-link"
+                  style="display: flex !important; align-items: center !important; gap: 12px !important; padding: 10px 18px !important; color: #334155 !important; text-decoration: none !important;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    style="color: #334155 !important; flex-shrink: 0 !important;">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                  </svg>
+                  <span
+                    style="color: #334155 !important; font-size: 13.5px !important; font-weight: 500 !important;">Quản
+                    lý thanh toán</span>
+                </a>
+                <a href="Tai_khoan.html" class="dropdown-item-link"
+                  style="display: flex !important; align-items: center !important; gap: 12px !important; padding: 10px 18px !important; color: #334155 !important; text-decoration: none !important;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    style="color: #334155 !important; flex-shrink: 0 !important;">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span
+                    style="color: #334155 !important; font-size: 13.5px !important; font-weight: 500 !important;">Quản
+                    lý tài khoản</span>
+                </a>
+                <a href="#" class="dropdown-item-link" id="btn-logout"
+                  style="display: flex !important; align-items: center !important; gap: 12px !important; padding: 10px 18px !important; color: #334155 !important; text-decoration: none !important;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    style="color: #334155 !important; flex-shrink: 0 !important;">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                  </svg>
+                  <span
+                    style="color: #334155 !important; font-size: 13.5px !important; font-weight: 500 !important;">Đăng
+                    xuất</span>
+                </a>
+              </div>
+              <div class="dropdown-divider-line"></div>
+              <div class="dropdown-footer text-center py-2 px-3"
+                style="background: #ffffff !important; text-align: center !important; padding: 10px 16px !important;">
+                <img src="../assets/images/Nap_Game/logo.png" alt="MyE Logo" class="dropdown-mye-logo"
+                  style="height: 36px !important; width: auto !important; display: inline-block !important;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Account Hero Banner Section -->
+  <section class="account-banner-section">
+    <div class="container account-banner-wrapper">
+      <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
+
+        <!-- Left: Avatar & User Info -->
+        <div class="d-flex align-items-center gap-4 account-banner-user-group">
+          <div class="user-avatar-hero-container">
+            <svg class="user-avatar-hero-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="22" fill="#1CB0F6" />
+              <circle cx="22" cy="22" r="15.5" fill="#FCD535" />
+              <path d="M22 6.5A15.5 15.5 0 0 1 22 37.5Z" fill="#F5B800" />
+              <path d="M14.5 16.5C15.5 14.2 18.5 14.2 19.5 16.5" stroke="#7A5200" stroke-width="2"
+                stroke-linecap="round" />
+              <path d="M24.5 16.5C25.5 14.2 28.5 14.2 29.5 16.5" stroke="#7A5200" stroke-width="2"
+                stroke-linecap="round" />
+              <path d="M15 22.5C15 27 29 27 29 22.5Z" fill="#E11D48" />
+              <path d="M18.5 24C18.5 28 25.5 28 25.5 24Z" fill="#FF8A8A" />
+            </svg>
+          </div>
+
+          <div>
+            <h1 class="account-user-name" id="hero-user-fullname">Nguyễn Văn A</h1>
+            <div class="account-user-meta">
+              <div class="account-meta-item">
+                <svg width="20" height="21" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 9a7 7 0 1 1 14 0H5z" />
+                </svg>
+                <span>Tài khoản: <strong>fb.112314335</strong></span>
+              </div>
+              <div class="account-meta-item">
+                <svg width="20" height="25" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 5a3 3 0 1 1 6 0v3H9V7zm3 6a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                </svg>
+                <span>MYE ID: <strong>1123123214</strong></span>
+              </div>
+              <div class="account-meta-item">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7 1a1 1 0 0 1 1 1v1h8V2a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3h1V2a1 1 0 0 1 1-1zM5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8H5zm3 3h3v3H8v-3zm5 0h3v3h-3v-3zm-5 5h3v3H8v-3zm5 0h3v3h-3v-3z" />
+                </svg>
+                <span>Ngày tạo tài khoản: <strong>19/06/2026</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Tabs Buttons -->
+        <div class="account-nav-tabs">
+          <button class="account-nav-btn active">Tài khoản</button>
+          <button class="account-nav-btn">Bảo mật</button>
+          <button class="account-nav-btn">Lịch sử giao dịch</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Level Section -->
+  <section class="security-level-section">
+    <div class="container account-card-container">
+      <div class="d-flex align-items-center gap-5">
+        <img src="../assets/images/Tai_khoan/20%25.png" onerror="this.src='../assets/images/Tai_khoan/security_20.png'"
+          alt="20% Security Level" class="security-gauge-img">
+        <div>
+          <h2 class="security-title">Mức độ bảo mật</h2>
+          <p class="security-desc">Tài khoản của bạn hiện tại có thể bị đe dọa bảo mật. Hãy hoàn thiện các thông tin bên
+            dưới.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Account Info Title Section -->
+  <section class="account-section-header">
+    <div class="container account-card-container">
+      <div>
+        <h2 class="account-main-title">Thông tin tài khoản</h2>
+        <p class="account-main-subtitle">Bạn có thể cập nhật Hồ sơ Công khai của mình tại đây và thông tin sẽ tự động
+          đồng bộ tất cả các tài khoản Game đã được kết nối.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Account Content Cards Section -->
+  <section class="pb-5">
+    <div class="container account-card-container">
+
+      <!-- Card 1: Personal Info ("Thông tin cá nhân") -->
+      <div class="account-card personal-info-card">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <div class="d-flex align-items-center gap-3">
+            <div class="card-head-avatar">
+              <svg viewBox="0 0 44 44" fill="none">
+                <circle cx="22" cy="22" r="22" fill="#1CB0F6" />
+                <circle cx="22" cy="22" r="14" fill="#FCD535" />
+                <path d="M22 8A14 14 0 0 1 22 36Z" fill="#F5B800" />
+                <path d="M15 17C16 15 18.5 15 19.5 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M24.5 17C25.5 15 28 15 29 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M15.5 22.5C15.5 26.5 28.5 26.5 28.5 22.5Z" fill="#E11D48" />
+                <path d="M18.5 23.8C18.5 27.5 25.5 27.5 25.5 23.8Z" fill="#FF8A8A" />
+              </svg>
+            </div>
+            <div>
+              <div class="card-head-title">Thông tin cá nhân</div>
+              <div class="card-head-status-incomplete">Chưa hoàn thiện</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons: View mode vs Edit mode -->
+          <button class="btn-outline-orange-custom" id="btn-edit-profile">Chỉnh Sửa</button>
+
+          <div class="d-none align-items-center gap-2" id="profile-edit-actions">
+            <button class="btn-cancel-edit" id="btn-cancel-profile-edit" type="button">HỦY</button>
+            <button class="btn-save-edit" id="btn-save-profile-edit" type="button">LƯU</button>
+          </div>
+        </div>
+
+        <!-- Info Table Rows -->
+        <div class="personal-info-list">
+
+          <!-- Row 1: Full Name -->
+          <div class="info-row">
+            <div class="info-row-label-col">
+              <div class="info-row-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 9a7 7 0 1 1 14 0H5z" />
+                </svg>
+              </div>
+              <span class="info-row-label">Họ và tên</span>
+            </div>
+            <div class="info-row-value-col">
+              <span id="val-fullname">Nguyễn Văn A</span>
+              <input type="text" class="custom-edit-input d-none" id="edit-fullname" value="Nguyễn Văn A">
+            </div>
+          </div>
+
+          <!-- Row 2: Gender -->
+          <div class="info-row">
+            <div class="info-row-label-col">
+              <div class="info-row-icon">
+                <svg width="22" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-1 2a4 4 0 0 1 4 4v1h-3.1a6.002 6.002 0 0 0-4.9-4.9V13zM9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 9a7 7 0 1 1 14 0H2z" />
+                </svg>
+              </div>
+              <span class="info-row-label">Giới tính</span>
+            </div>
+            <div class="info-row-value-col">
+              <span id="val-gender">Nam</span>
+              <div class="position-relative w-100 d-none" id="edit-gender-wrapper" style="max-width: 450px;">
+                <select class="custom-edit-input custom-edit-select" id="edit-gender">
+                  <option value="Nam">Nam</option>
+                  <option value="Nữ">Nữ</option>
+                  <option value="Khác">Khác</option>
+                </select>
+                <svg class="select-chevron-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0C3875"
+                  stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3: DOB -->
+          <div class="info-row">
+            <div class="info-row-label-col">
+              <div class="info-row-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7 1a1 1 0 0 1 1 1v1h8V2a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3h1V2a1 1 0 0 1 1-1zM5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8H5zm3 3h3v3H8v-3zm5 0h3v3h-3v-3zm-5 5h3v3H8v-3zm5 0h3v3h-3v-3z" />
+                </svg>
+              </div>
+              <span class="info-row-label">Ngày sinh</span>
+            </div>
+            <div class="info-row-value-col">
+              <span id="val-dob">01/01/1999</span>
+              <div class="position-relative w-100 d-none" id="edit-dob-wrapper" style="max-width: 450px;">
+                <input type="text" class="custom-edit-input pe-5" id="edit-dob" value="01/01/1999"
+                  placeholder="DD/MM/YYYY">
+                <svg class="input-calendar-icon" width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <rect x="7" y="2" width="2" height="4" rx="1" fill="#0C3875" class="cal-theme" />
+                  <rect x="15" y="2" width="2" height="4" rx="1" fill="#0C3875" class="cal-theme" />
+                  <rect x="4" y="5" width="16" height="17" rx="3" fill="#0C3875" class="cal-theme" />
+                  <rect x="6" y="10" width="12" height="10" rx="1" fill="#FFFFFF" />
+                  <circle cx="8.5" cy="12.5" r="1" fill="#0C3875" class="cal-theme" />
+                  <circle cx="12" cy="12.5" r="1" fill="#0C3875" class="cal-theme" />
+                  <circle cx="15.5" cy="12.5" r="1" fill="#0C3875" class="cal-theme" />
+                  <circle cx="8.5" cy="16.5" r="1" fill="#0C3875" class="cal-theme" />
+                  <circle cx="12" cy="16.5" r="1" fill="#0C3875" class="cal-theme" />
+                  <circle cx="15.5" cy="16.5" r="1" fill="#0C3875" class="cal-theme" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 4: Address -->
+          <div class="info-row">
+            <div class="info-row-label-col">
+              <div class="info-row-icon">
+                <svg width="18" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 2a8 8 0 0 0-8 8c0 5.25 7.05 11.25 7.35 11.5.38.33.92.33 1.3 0C12.95 21.25 20 15.25 20 10a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                </svg>
+              </div>
+              <span class="info-row-label">Địa chỉ</span>
+            </div>
+            <div class="info-row-value-col">
+              <span id="val-address">TP. Hồ Chí Minh</span>
+              <input type="text" class="custom-edit-input d-none" id="edit-address" value="TP. Hồ Chí Minh">
+            </div>
+          </div>
+
+          <!-- Row 5: Email -->
+          <div class="info-row">
+            <div class="info-row-label-col">
+              <div class="info-row-icon">
+                <svg width="22" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M3 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H3zm0 3.25 9 5.25 9-5.25V6L12 11.25 3 6v1.25z" />
+                </svg>
+              </div>
+              <span class="info-row-label">Email</span>
+            </div>
+            <div class="info-row-value-col">
+              <div class="verified-email-badge">
+                <span id="val-email">Gamece@gmail.com</span>
+                <span class="check-icon-circle">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 6: Phone -->
+          <div class="info-row">
+            <div class="info-row-label-col">
+              <div class="info-row-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z" />
+                </svg>
+              </div>
+              <span class="info-row-label">Số điện thoại</span>
+            </div>
+            <div class="info-row-value-col">
+              <div class="d-flex align-items-center justify-content-between w-100" id="phone-value-container">
+                <span class="text-muted-row" id="val-phone">Chưa có số điện thoại</span>
+                <button class="btn-outline-orange-custom" id="btn-verify-phone">Liên kết xác thực</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Card 2: Account Sync ("Đồng bộ tài khoản") -->
+      <div class="account-card account-sync-card">
+        <div class="d-flex align-items-center justify-content-between mb-3 cursor-pointer"
+          id="toggle-account-sync-header">
+          <div class="d-flex align-items-center gap-3">
+            <div class="card-head-avatar">
+              <svg viewBox="0 0 44 44" fill="none">
+                <circle cx="22" cy="22" r="22" fill="#1CB0F6" />
+                <circle cx="22" cy="22" r="14" fill="#FCD535" />
+                <path d="M22 8A14 14 0 0 1 22 36Z" fill="#F5B800" />
+                <path d="M15 17C16 15 18.5 15 19.5 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M24.5 17C25.5 15 28 15 29 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M15.5 22.5C15.5 26.5 28.5 26.5 28.5 22.5Z" fill="#E11D48" />
+                <path d="M18.5 23.8C18.5 27.5 25.5 27.5 25.5 23.8Z" fill="#FF8A8A" />
+              </svg>
+            </div>
+            <div class="card-head-title">Đồng bộ tài khoản</div>
+          </div>
+          <button class="btn-circle-arrow" id="btn-toggle-account-sync" title="Mở rộng / Thu gọn" type="button">
+            <svg class="chevron-arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- 1. DEFAULT VIEW (COLLAPSED): Summary 2-account Sync Box -->
+        <div id="sync-summary-box">
+          <div class="mb-3">
+            <span class="fw-bold text-dark font-14">Tài khoản hiện tại</span>
+          </div>
+          <div class="sync-box-container">
+            <!-- Left Profile Item: Current Account with Dropdown -->
+            <div class="sync-profile-item position-relative account-dropdown-wrapper" id="summary-left-account">
+              <div class="account-dropdown-trigger d-flex align-items-center gap-3 p-2 rounded-3" id="account-dropdown-trigger-summary" style="cursor: pointer;" title="Nhấp vào đây để chọn loại tài khoản đồng bộ">
+                <div id="summary-left-icon">
+                  <div class="facebook-icon-bg" style="width: 48px; height: 48px;">
+                    <svg width="48" height="48" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="23" cy="23" r="23" fill="#1877F2" />
+                      <path
+                        d="M30.5 23H25.25V38.5H19V23H16V17.75H19V14.5C19 11.6 21.1 9.25 24.75 9.25H29.5V14.5H26.375C25.5 14.5 25.25 16 25.25 16.125V17.75H30L30.5 23Z"
+                        fill="white" />
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <div class="sync-name" id="summary-left-name">Nguyễn Văn A</div>
+                  <div class="sync-id" id="summary-left-id">fb.231244</div>
+                </div>
+              </div>
+
+              <!-- Dropdown Menu Options -->
+              <div class="account-type-dropdown-menu d-none" id="account-sync-dropdown-menu">
+                <div class="dropdown-menu-header px-3 py-2 text-muted font-11 fw-bold text-uppercase border-bottom">Chọn tài khoản đồng bộ</div>
+                
+                <!-- Option 1: Facebook -->
+                <div class="account-dropdown-option active d-flex align-items-center gap-3 p-2 px-3" data-sync-case="facebook">
+                  <div class="option-icon-box flex-shrink-0" style="width: 34px; height: 34px;">
+                    <svg width="34" height="34" viewBox="0 0 46 46" fill="none">
+                      <circle cx="23" cy="23" r="23" fill="#1877F2" />
+                      <path d="M30.5 23H25.25V38.5H19V23H16V17.75H19V14.5C19 11.6 21.1 9.25 24.75 9.25H29.5V14.5H26.375C25.5 14.5 25.25 16 25.25 16.125V17.75H30L30.5 23Z" fill="white" />
+                    </svg>
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="fw-bold font-13 text-dark">Facebook</div>
+                    <div class="font-11 text-muted">Nguyễn Văn A (fb.231244)</div>
+                  </div>
+                  <div class="check-mark font-14 fw-bold text-primary ms-auto">✓</div>
+                </div>
+
+                <!-- Option 2: Google -->
+                <div class="account-dropdown-option d-flex align-items-center gap-3 p-2 px-3" data-sync-case="google">
+                  <div class="option-icon-box flex-shrink-0">
+                    <div class="google-icon-bg" style="width: 34px; height: 34px;">
+                      <svg width="18" height="18" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                        <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.15C3.26 21.3 7.31 24 12 24z"/>
+                        <path fill="#FBBC05" d="M5.28 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.61H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.39l3.99-3.15z"/>
+                        <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.61l3.99 3.15c.95-2.85 3.6-4.96 6.72-4.96z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="fw-bold font-13 text-dark">Google</div>
+                    <div class="font-11 text-muted">Nguyễn Văn A (gg.01020)</div>
+                  </div>
+                  <div class="check-mark font-14 fw-bold text-primary ms-auto d-none">✓</div>
+                </div>
+
+                <!-- Option 3: Tài khoản MYE -->
+                <div class="account-dropdown-option d-flex align-items-center gap-3 p-2 px-3" data-sync-case="mye">
+                  <div class="option-icon-box flex-shrink-0" style="width: 34px; height: 34px; border-radius: 8px; background: #DCE6F5; display: flex; align-items: center; justify-content: center;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#0C3875">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 9a7 7 0 1 1 14 0H5z" />
+                    </svg>
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="fw-bold font-13 text-dark">Tài khoản MYE</div>
+                    <div class="font-11 text-muted">myepro1123</div>
+                  </div>
+                  <div class="check-mark font-14 fw-bold text-primary ms-auto d-none">✓</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sync-arrow-icon">
+              <svg width="38" height="22" viewBox="0 0 38 22" fill="none" stroke="#D0D0D0" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.5L4 8.5H27" />
+                <path d="M10 15.0H33L25 21.0" />
+              </svg>
+            </div>
+
+            <div class="sync-profile-item">
+              <div class="mye-placeholder-avatar" id="summary-right-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#0C3875">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 9a7 7 0 1 1 14 0H5z" />
+                </svg>
+              </div>
+              <div>
+                <div class="sync-name" id="mye-sync-name-title" style="display: none;">Tài khoản MYE</div>
+                <div class="sync-id text-dark fw-bold" style="font-size: 14px;" id="mye-sync-status-title">Chưa có tài
+                  khoản MYE</div>
+              </div>
+            </div>
+
+            <button class="badge-unsynced" id="btn-sync-action">Chưa đồng bộ</button>
+          </div>
+        </div>
+
+        <!-- 2. EXPANDED VIEW (WHEN ARROW CLICKED): Single Card + MYE Sync Form OR Synced View -->
+        <div class="account-sync-form-expand d-none" id="account-sync-content">
+
+          <!-- State A: Form view (before sync) -->
+          <div id="sync-form-container">
+            <!-- Current Account Section -->
+            <div class="mb-4">
+              <h6 class="fw-bold text-dark font-14 mb-3">Tài khoản hiện tại</h6>
+
+              <div
+                class="current-account-card p-3 rounded-4 border bg-white shadow-sm d-flex align-items-center justify-content-between account-dropdown-trigger cursor-pointer" id="account-dropdown-trigger-expanded" title="Nhấp vào đây để chọn loại tài khoản đồng bộ">
+                <div class="d-flex align-items-center gap-3">
+                  <div id="expanded-left-icon">
+                    <div class="facebook-icon-bg" style="width: 48px; height: 48px;">
+                      <svg width="48" height="48" viewBox="0 0 46 46" fill="none">
+                        <circle cx="23" cy="23" r="23" fill="#1877F2" />
+                        <path
+                          d="M30.5 23H25.25V38.5H19V23H16V17.75H19V14.5C19 11.6 21.1 9.25 24.75 9.25H29.5V14.5H26.375C25.5 14.5 25.25 16 25.25 16.125V17.75H30L30.5 23Z"
+                          fill="white" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="fw-bold text-dark font-15" id="expanded-left-name">Nguyễn Văn A</div>
+                    <div class="text-muted font-13" id="expanded-left-sub">facebook.com/nguyenvana</div>
+                  </div>
+                </div>
+                <div class="text-muted font-13 fw-medium pe-2" id="expanded-left-id">fb.01020</div>
+              </div>
+            </div>
+
+            <!-- MYE Account Sync Form Section -->
+            <div class="mb-3" id="sync-form-section">
+              <h6 class="fw-bold text-dark font-15 mb-1" id="sync-form-heading">Đồng bộ tài khoản MYE</h6>
+              <p class="text-muted font-12 mb-3" id="sync-form-desc">Chỉ đồng bộ được tài khoản MYE chưa có dữ liệu trong Game. Sau khi đồng
+                bộ, bạn có thể đăng nhập bằng Facebook hoặc tài khoản MYE</p>
+
+              <form id="form-account-sync" onsubmit="return false;">
+                <!-- Field 1: Username -->
+                <div class="mb-3">
+                  <label class="form-label font-13 fw-bold text-dark mb-2">Tạo tên đăng nhập MYE</label>
+                  <input type="text" class="custom-edit-input w-100" id="sync-mye-username"
+                    placeholder="Tối thiểu 6 kí tự" style="max-width: 100%;">
+                </div>
+
+                <!-- Field 2: Password -->
+                <div class="mb-3">
+                  <label class="form-label font-13 fw-bold text-dark mb-2">Tạo mật khẩu</label>
+                  <input type="password" class="custom-edit-input w-100" id="sync-mye-password"
+                    placeholder="Tối thiểu 8 kí tự" style="max-width: 100%;">
+                </div>
+
+                <!-- Field 3: Confirm Password -->
+                <div class="mb-4">
+                  <label class="form-label font-13 fw-bold text-dark mb-2">Xác nhận lại mật khẩu</label>
+                  <input type="password" class="custom-edit-input w-100" id="sync-mye-confirm-password"
+                    placeholder="Tối thiểu 8 kí tự" style="max-width: 100%;">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="button" class="btn-confirm-sync w-100" id="btn-submit-sync">Xác nhận đồng bộ</button>
+              </form>
+            </div>
+
+            <!-- MYE Unavailable Notice Banner (Image 2) -->
+            <div id="mye-unavailable-banner" class="d-none mt-3 p-3 px-4 rounded-3 text-center" style="background: #FFFBEB; border-radius: 10px;">
+              <div class="d-flex align-items-center justify-content-center gap-2 font-13 fw-semibold text-dark">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0C3875" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <span>Tính năng đồng bộ chỉ khả dụng với tài khoản đăng nhập gốc được tạo qua Facebook hoặc Google</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- State B: Synced Success View (after sync) -->
+          <div id="sync-success-view" class="d-none">
+            <!-- Current Account Section -->
+            <div class="mb-3">
+              <h6 class="fw-bold text-dark font-14 mb-3">Tài khoản hiện tại</h6>
+
+              <div
+                class="current-account-card p-3 rounded-4 border bg-white shadow-sm d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                  <div id="synced-left-icon">
+                    <div class="facebook-icon-bg" style="width: 48px; height: 48px;">
+                      <svg width="48" height="48" viewBox="0 0 46 46" fill="none">
+                        <circle cx="23" cy="23" r="23" fill="#1877F2" />
+                        <path
+                          d="M30.5 23H25.25V38.5H19V23H16V17.75H19V14.5C19 11.6 21.1 9.25 24.75 9.25H29.5V14.5H26.375C25.5 14.5 25.25 16 25.25 16.125V17.75H30L30.5 23Z"
+                          fill="white" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="fw-bold text-dark font-15" id="synced-left-name">Nguyễn Văn A</div>
+                    <div class="text-muted font-13" id="synced-left-sub">facebook.com/nguyenvana</div>
+                  </div>
+                </div>
+                <div class="text-muted font-13 fw-medium pe-2" id="synced-left-id">fb.01020</div>
+              </div>
+            </div>
+
+            <!-- Dashed Divider with "Đã đồng bộ" badge -->
+            <div class="sync-dashed-divider my-4">
+              <div class="sync-dashed-line"></div>
+              <span class="sync-status-pill">Đã đồng bộ</span>
+              <div class="sync-dashed-line"></div>
+            </div>
+
+            <!-- MYE Synced Account Card -->
+            <div class="mb-4">
+              <div
+                class="current-account-card p-3 rounded-4 border bg-white shadow-sm d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mye-placeholder-avatar"
+                    style="width: 48px; height: 48px; background: #DCE6F5; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="#0C3875">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 9a7 7 0 1 1 14 0H5z" />
+                    </svg>
+                  </div>
+                  <div class="fw-bold text-dark font-15">Tài khoản MYE</div>
+                </div>
+                <div class="text-muted font-13 fw-medium pe-2" id="synced-mye-username-text">myepro456</div>
+              </div>
+            </div>
+
+            <!-- Green Banner Alert -->
+            <div class="sync-success-alert p-3 rounded-3 d-flex align-items-center justify-content-center gap-3">
+              <div class="sync-check-icon flex-shrink-0">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#10B981">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                </svg>
+              </div>
+              <div class="font-13 fw-bold text-success-dark">
+                Tài khoản đã được đồng bộ. Bạn có thể đăng nhập bằng tài khoản Facebook hoặc tài khoản MYE
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Card 3: Activity History ("Lịch sử hoạt động") -->
+      <div class="account-card activity-history-card">
+        <div class="activity-card-header cursor-pointer" id="toggle-activity-history">
+          <div class="d-flex align-items-center gap-3">
+            <div class="card-head-avatar">
+              <svg viewBox="0 0 44 44" fill="none">
+                <circle cx="22" cy="22" r="22" fill="#1CB0F6" />
+                <circle cx="22" cy="22" r="14" fill="#FCD535" />
+                <path d="M22 8A14 14 0 0 1 22 36Z" fill="#F5B800" />
+                <path d="M15 17C16 15 18.5 15 19.5 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M24.5 17C25.5 15 28 15 29 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M15.5 22.5C15.5 26.5 28.5 26.5 28.5 22.5Z" fill="#E11D48" />
+                <path d="M18.5 23.8C18.5 27.5 25.5 27.5 25.5 23.8Z" fill="#FF8A8A" />
+              </svg>
+            </div>
+            <div class="card-head-title">Lịch sử hoạt động</div>
+          </div>
+          <button class="btn-circle-arrow" id="btn-toggle-activity" title="Mở rộng / Thu gọn" type="button">
+            <svg class="chevron-arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Collapsible Content -->
+        <div class="activity-card-body mt-4 d-none" id="activity-history-content">
+          <!-- Session logout box section -->
+          <div class="mb-4">
+            <div class="session-section-header mb-3">
+              <h5 class="fw-bold text-dark font-16 mb-1">Gỡ tất cả các phiên đăng nhập đã lưu</h5>
+              <p class="text-muted font-13 mb-0">Tăng cường kiểm soát và bảo vệ tài khoản của bạn</p>
+            </div>
+
+            <div
+              class="logout-sessions-card p-3 p-md-4 rounded-4 border bg-white shadow-sm d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+              <div>
+                <div class="fw-bold text-dark font-14 mb-1">
+                  Khi thực hiện thao tác này, các thiết bị đang đăng nhập sẽ bị đăng xuất.<br
+                    class="d-none d-md-inline"> Bạn sẽ cần phải đăng nhập lại.
+                </div>
+                <div class="font-12 text-muted mt-2">
+                  Lưu ý: Để đảm bảo an toàn tài khoản, vui lòng thay đổi mật khẩu trước khi tiến hành gỡ toàn bộ các
+                  phiên bản đăng nhập trên mọi thiết bị.
+                </div>
+              </div>
+              <button class="btn-outline-orange-custom flex-shrink-0" id="btn-logout-all-sessions">Gỡ tất cả</button>
+            </div>
+          </div>
+
+          <!-- Activity History Table -->
+          <div class="table-responsive mt-4">
+            <table class="table table-borderless activity-table align-middle">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 25%;">Thời gian</th>
+                  <th scope="col" style="width: 30%;">Hoạt động</th>
+                  <th scope="col" style="width: 25%;">Thiết bị</th>
+                  <th scope="col" style="width: 20%;">IP</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2 text-dark font-13 fw-medium">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span>02/06/2026 08:53:18</span>
+                    </div>
+                  </td>
+                  <td class="font-13 text-dark">Kích hoạt tài khoản</td>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <svg width="29" height="29" viewBox="0 0 48 48" class="flex-shrink-0">
+                        <path fill="#EA4335" d="M4.95 13A22 22 0 0 1 43.05 13L24 24Z" />
+                        <path fill="#FBBC05" d="M43.05 13A22 22 0 0 1 24 46L24 24Z" />
+                        <path fill="#34A853" d="M24 46A22 22 0 0 1 4.95 13L24 24Z" />
+                        <circle cx="24" cy="24" r="10.5" fill="#FFFFFF" />
+                        <circle cx="24" cy="24" r="7.5" fill="#1A73E8" />
+                      </svg>
+                      <div>
+                        <div class="font-13 fw-medium text-dark lh-sm">Chrome Mobile</div>
+                        <div class="font-11 text-muted">Mobile</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="font-13 text-dark fw-medium">210.86.237.19</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2 text-dark font-13 fw-medium">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span>02/06/2026 08:52:18</span>
+                    </div>
+                  </td>
+                  <td class="font-13 text-dark">Cập nhật thông tin tài khoản</td>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <svg width="29" height="29" viewBox="0 0 24 24" class="flex-shrink-0">
+                        <circle cx="12" cy="12" r="10" fill="#00A3FF" />
+                        <polygon points="16.8,7.2 12.8,12.8 10.8,10.8" fill="#FF3B30" />
+                        <polygon points="7.2,16.8 12.8,12.8 10.8,10.8" fill="#FFFFFF" />
+                        <circle cx="12" cy="12" r="1.5" fill="#FFFFFF" />
+                      </svg>
+                      <div>
+                        <div class="font-13 fw-medium text-dark lh-sm">Safari</div>
+                        <div class="font-11 text-muted">Macbook</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="font-13 text-dark fw-medium">210.86.237.19</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Dynamic Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Modal: Edit Profile -->
+  <div id="modal-edit-profile" class="custom-modal-overlay d-none">
+    <div class="custom-modal-box">
+      <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+        <h4 class="fw-bold text-navy m-0">Chỉnh Sửa Thông Tin Cá Nhân</h4>
+        <button class="btn-close" id="btn-close-edit-modal"></button>
+      </div>
+      <form id="form-edit-profile">
+        <div class="mb-3">
+          <label class="form-label font-14 fw-bold">Họ và tên</label>
+          <input type="text" id="input-fullname" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label font-14 fw-bold">Giới tính</label>
+          <select id="input-gender" class="form-select">
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Khác">Khác</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label font-14 fw-bold">Ngày sinh</label>
+          <input type="text" id="input-dob" class="form-control" placeholder="DD/MM/YYYY" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label font-14 fw-bold">Địa chỉ</label>
+          <input type="text" id="input-address" class="form-control" required>
+        </div>
+        <div class="mb-4">
+          <label class="form-label font-14 fw-bold">Email</label>
+          <input type="email" id="input-email" class="form-control" required>
+        </div>
+        <div class="d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-secondary rounded-3 px-4"
+            onclick="document.getElementById('modal-edit-profile').classList.add('d-none')">Hủy</button>
+          <button type="submit" class="btn btn-warning text-white fw-bold rounded-3 px-4"
+            style="background-color: #FF6600; border: none;">Lưu Thay Đổi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Phone Verification -->
+  <div id="modal-verify-phone" class="custom-modal-overlay d-none">
+    <div class="custom-modal-box">
+      <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+        <h4 class="fw-bold text-navy m-0">Liên Kết Xác Thực Số Điện Thoại</h4>
+        <button class="btn-close" id="btn-close-phone-modal"></button>
+      </div>
+      <form id="form-verify-phone">
+        <div class="mb-3">
+          <label class="form-label font-14 fw-bold">Nhập số điện thoại</label>
+          <input type="tel" id="input-phone-number" class="form-control" placeholder="0901234567" required>
+        </div>
+        <div class="mb-4">
+          <label class="form-label font-14 fw-bold">Mã xác thực OTP</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="123456" required>
+            <button type="button" class="btn btn-outline-secondary"
+              onclick="alert('Đã gửi mã OTP đến số điện thoại của bạn!')">Gửi Mã OTP</button>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-secondary rounded-3 px-4"
+            onclick="document.getElementById('modal-verify-phone').classList.add('d-none')">Hủy</button>
+          <button type="submit" class="btn btn-warning text-white fw-bold rounded-3 px-4"
+            style="background-color: #FF6600; border: none;">Xác Thực</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="../assets/js/Header_active.js"></script>
+  <script src="../assets/js/Tai_khoan.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông Tin Giao Dịch - MyE Coin</title>
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS for Nap Game & MyE Coin -->
+  <link rel="stylesheet" href="../assets/css/Nap_game.css">
+  <link rel="stylesheet" href="../assets/css/Mye_coin.css">
+  <link rel="stylesheet" href="../assets/css/Thong_tin_giao_dich.css">
+</head>
+<body>
+
+  <!-- Dynamic Header Container -->
+  <div id="header-container">
+    <header class="mye-header py-3 bg-white border-bottom shadow-sm sticky-top">
+      <div class="container d-flex align-items-center justify-content-between">
+        <!-- Brand Logo -->
+        <a href="Nap_game.html" class="d-flex align-items-center text-decoration-none">
+          <img src="../assets/images/Nap_Game/logo.png" alt="MyE Logo" class="mye-logo" height="52">
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="d-none d-md-flex align-items-center gap-4">
+          <a href="#" class="nav-link">Trang Chủ</a>
+          <a href="#" class="nav-link">Trò Chơi</a>
+          <a href="Nap_game.html" class="nav-link nav-link-active position-relative">Nạp Game</a>
+          <a href="#" class="nav-link">Tin Tức</a>
+          <a href="#" class="nav-link">Hỗ Trợ</a>
+        </nav>
+
+        <!-- Login Button / User Profile Area -->
+        <div class="d-flex align-items-center" id="header-auth-container">
+          <a href="#" class="btn-login-orange" id="btn-login">ĐĂNG NHẬP</a>
+
+          <!-- Logged In User Profile Bar (Initially hidden) -->
+          <div class="user-profile-header position-relative d-none align-items-center gap-2" id="user-profile-bar">
+            <div class="d-flex align-items-center gap-2 cursor-pointer" id="user-profile-toggle">
+              <div class="user-avatar">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="22" cy="22" r="22" fill="#1CB0F6"/>
+                  <circle cx="22" cy="22" r="13" fill="#FCD535"/>
+                  <path d="M15.5 17C16.5 15 19.5 15 20.5 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M23.5 17C24.5 15 27.5 15 28.5 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M16 22.5C16 26 28 26 28 22.5" fill="#D82A2A"/>
+                  <path d="M18.5 23.5C18.5 27 25.5 27 25.5 23.5" fill="#FF5C5C"/>
+                </svg>
+              </div>
+              <div class="user-info-text text-start">
+                <div class="username-text">myepro01</div>
+                <div class="mye-id-text">MyE ID: 00123</div>
+              </div>
+            </div>
+
+            <div class="user-coin-balance d-flex align-items-center gap-2 ms-3">
+              <img src="../assets/images/Nap_Game/coin_M.png" alt="Coin" class="mye-gold-coin-img">
+              <span class="coin-amount">1000</span>
+            </div>
+
+            <!-- Popup Dropdown -->
+            <div class="user-dropdown-menu d-none" id="user-dropdown-menu">
+              <div class="dropdown-header-user d-flex align-items-center gap-2 p-3">
+                <div class="user-avatar-sm">
+                  <svg width="34" height="34" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22" cy="22" r="22" fill="#1CB0F6"/>
+                    <circle cx="22" cy="22" r="13" fill="#FCD535"/>
+                    <path d="M15.5 17C16.5 15 19.5 15 20.5 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M23.5 17C24.5 15 27.5 15 28.5 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M16 22.5C16 26 28 26 28 22.5" fill="#D82A2A"/>
+                    <path d="M18.5 23.5C18.5 27 25.5 27 25.5 23.5" fill="#FF5C5C"/>
+                  </svg>
+                </div>
+                <div class="text-start">
+                  <div class="dropdown-username">myepro001</div>
+                  <div class="dropdown-mye-id">MyE ID: 00123</div>
+                </div>
+              </div>
+              <div class="dropdown-divider-line"></div>
+              <div class="dropdown-menu-list" style="padding: 8px 0 !important; background: #ffffff !important;">
+                <a href="#" onclick="return false;" class="dropdown-item-link" style="display: flex !important; align-items: center !important; gap: 12px !important; padding: 10px 18px !important; color: #334155 !important; text-decoration: none !important;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #334155 !important; flex-shrink: 0 !important;">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                  </svg>
+                  <span style="color: #334155 !important; font-size: 13.5px !important; font-weight: 500 !important;">Quản lý thanh toán</span>
+                </a>
+                <a href="Tai_khoan.html" class="dropdown-item-link" style="display: flex !important; align-items: center !important; gap: 12px !important; padding: 10px 18px !important; color: #334155 !important; text-decoration: none !important;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #334155 !important; flex-shrink: 0 !important;">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span style="color: #334155 !important; font-size: 13.5px !important; font-weight: 500 !important;">Quản lý tài khoản</span>
+                </a>
+                <a href="#" class="dropdown-item-link" id="btn-logout" style="display: flex !important; align-items: center !important; gap: 12px !important; padding: 10px 18px !important; color: #334155 !important; text-decoration: none !important;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #334155 !important; flex-shrink: 0 !important;">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                  </svg>
+                  <span style="color: #334155 !important; font-size: 13.5px !important; font-weight: 500 !important;">Đăng xuất</span>
+                </a>
+              </div>
+              <div class="dropdown-divider-line"></div>
+              <div class="dropdown-footer text-center py-2 px-3" style="background: #ffffff !important; text-align: center !important; padding: 10px 16px !important;">
+                <img src="../assets/images/Nap_Game/logo.png" alt="MyE Logo" class="dropdown-mye-logo" style="height: 36px !important; width: auto !important; display: inline-block !important;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breadcrumb inside Header -->
+      <div class="container mt-3 mb-1">
+        <div class="d-flex align-items-center gap-2 fs-7" style="padding-left: 80px !important;">
+          <a href="Nap_game.html" class="text-decoration-none text-navy fw-bold">Nạp Game</a>
+          <span class="text-muted">&gt;</span>
+          <a href="Mye_coin.html" class="text-decoration-none text-navy fw-bold">MYE Coin</a>
+          <span class="text-muted">&gt;</span>
+          <span class="text-orange fw-bold">Thông tin giao dịch</span>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Banner & Transaction Details Section -->
+  <section class="transaction-banner-section py-4 py-lg-5">
+    <div class="container">
+      <div class="transaction-wrapper position-relative mx-auto">
+
+        <!-- Right Side: White Transaction Info Card -->
+        <div class="transaction-card bg-white rounded-4 shadow-sm p-4 p-md-5">
+          <h2 class="card-title fw-bold text-navy mb-4">Nạp MYE Coin</h2>
+
+          <!-- Info Items Grid (2x2) -->
+          <div class="row g-4 mb-4">
+            <!-- Item 1: Account -->
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-3">
+                <div class="info-icon-badge">
+                  <img src="../assets/images/Thong_tin_giao_dich/boxicons_user.png" alt="User Icon">
+                </div>
+                <div>
+                  <div class="info-item-label">Tài khoản</div>
+                  <div class="info-item-value" id="val-account">myepro123</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2: MYE ID -->
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-3">
+                <div class="info-icon-badge">
+                  <img src="../assets/images/Thong_tin_giao_dich/teenyicons_id-outline.png" alt="ID Icon">
+                </div>
+                <div>
+                  <div class="info-item-label">MYE ID</div>
+                  <div class="info-item-value" id="val-mye-id">12233548</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3: Coin Received -->
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-3">
+                <div class="info-icon-badge bg-mint-light">
+                  <img src="../assets/images/Thong_tin_giao_dich/iconoir_coins.png" alt="Coins Icon">
+                </div>
+                <div>
+                  <div class="info-item-label">MYE Coin Nhận được</div>
+                  <div class="info-item-value font-22 text-dark fw-bold" id="val-coins">500</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4: Payment Method -->
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-3">
+                <div class="info-icon-badge">
+                  <img src="../assets/images/Thong_tin_giao_dich/momo.png" alt="Momo Icon" id="val-method-img">
+                </div>
+                <div>
+                  <div class="info-item-label">Phương thức thanh toán</div>
+                  <div class="info-item-value" id="val-method-name">Momo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Change Payment Method Link Button -->
+          <div class="mb-4">
+            <a href="Mye_coin.html" class="btn-change-method">Đổi hình thức thanh toán khác</a>
+          </div>
+
+          <!-- Amount Row & Pay Button -->
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <div class="amount-label text-navy fw-bold mb-1">Số tiền thanh toán</div>
+              <div class="amount-value text-orange fw-bold" id="val-price">500.000 VNĐ</div>
+            </div>
+            <button id="btn-pay-now" class="btn-pay-orange text-uppercase fw-bold px-4 py-3">THANH TOÁN</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Packages Section -->
+  <section class="coin-packages-section py-4">
+    <div class="container">
+      <h2 class="section-title text-start text-uppercase fw-bold mb-4">CHỌN GÓI NẠP KHÁC</h2>
+
+      <div class="package-grid mx-auto">
+        <!-- Package 1: 20 Coin -->
+        <div class="package-card" data-package="20" data-price="20.000 VNĐ">
+          <div class="package-img-wrapper">
+            <img src="../assets/images/Thong_tin_giao_dich/20_MYE_COIN.png" alt="20 MyE Coin">
+          </div>
+          <div class="package-info d-flex align-items-center justify-content-between p-3">
+            <div class="text-start">
+              <div class="package-name fw-bold">20 MyE Coin</div>
+              <div class="package-price text-orange fw-bold">20.000 VNĐ</div>
+            </div>
+            <button class="btn-buy-orange">MUA</button>
+          </div>
+        </div>
+
+        <!-- Package 2: 50 Coin -->
+        <div class="package-card" data-package="50" data-price="50.000 VNĐ">
+          <div class="package-img-wrapper">
+            <img src="../assets/images/Thong_tin_giao_dich/50_MYE_COIN.png" alt="50 MyE Coin">
+          </div>
+          <div class="package-info d-flex align-items-center justify-content-between p-3">
+            <div class="text-start">
+              <div class="package-name fw-bold">50 MyE Coin</div>
+              <div class="package-price text-orange fw-bold">50.000 VNĐ</div>
+            </div>
+            <button class="btn-buy-orange">MUA</button>
+          </div>
+        </div>
+
+        <!-- Package 3: 100 Coin -->
+        <div class="package-card" data-package="100" data-price="100.000 VNĐ">
+          <div class="package-img-wrapper">
+            <img src="../assets/images/Thong_tin_giao_dich/100_MYE_COIN.png" alt="100 MyE Coin">
+          </div>
+          <div class="package-info d-flex align-items-center justify-content-between p-3">
+            <div class="text-start">
+              <div class="package-name fw-bold">100 MyE Coin</div>
+              <div class="package-price text-orange fw-bold">100.000 VNĐ</div>
+            </div>
+            <button class="btn-buy-orange">MUA</button>
+          </div>
+        </div>
+
+        <!-- Package 4: 500 Coin (Active) -->
+        <div class="package-card active" data-package="500" data-price="500.000 VNĐ">
+          <div class="package-img-wrapper">
+            <img src="../assets/images/Thong_tin_giao_dich/500_MYE_COIN.png" alt="500 MyE Coin">
+          </div>
+          <div class="package-info d-flex align-items-center justify-content-between p-3">
+            <div class="text-start">
+              <div class="package-name fw-bold">500 MyE Coin</div>
+              <div class="package-price text-orange fw-bold">500.000 VNĐ</div>
+            </div>
+            <button class="btn-buy-orange">MUA</button>
+          </div>
+        </div>
+
+        <!-- Package 5: 1000 Coin -->
+        <div class="package-card" data-package="1000" data-price="1.000.000 VNĐ">
+          <div class="package-img-wrapper">
+            <img src="../assets/images/Thong_tin_giao_dich/1000_MYE_COIN.png" alt="1000 MyE Coin">
+          </div>
+          <div class="package-info d-flex align-items-center justify-content-between p-3">
+            <div class="text-start">
+              <div class="package-name fw-bold">1.000 MyE Coin</div>
+              <div class="package-price text-orange fw-bold">1.000.000 VNĐ</div>
+            </div>
+            <button class="btn-buy-orange">MUA</button>
+          </div>
+        </div>
+
+        <!-- Package 6: 2000 Coin -->
+        <div class="package-card" data-package="2000" data-price="2.000.000 VNĐ">
+          <div class="package-img-wrapper">
+            <img src="../assets/images/Thong_tin_giao_dich/2000_MYE_COIN.png" alt="2000 MyE Coin">
+          </div>
+          <div class="package-info d-flex align-items-center justify-content-between p-3">
+            <div class="text-start">
+              <div class="package-name fw-bold">2.000 MyE Coin</div>
+              <div class="package-price text-orange fw-bold">2.000.000 VNĐ</div>
+            </div>
+            <button class="btn-buy-orange">MUA</button>
+          </div>
+        </div>
+
+        <!-- Package 7: 5000 Coin -->
+        <div class="package-card" data-package="5000" data-price="5.000.000 VNĐ">
+          <div class="package-img-wrapper">
+            <img src="../assets/images/Thong_tin_giao_dich/5000_MYE_COIN.png" alt="5000 MyE Coin">
+          </div>
+          <div class="package-info d-flex align-items-center justify-content-between p-3">
+            <div class="text-start">
+              <div class="package-name fw-bold">5.000 MyE Coin</div>
+              <div class="package-price text-orange fw-bold">5.000.000 VNĐ</div>
+            </div>
+            <button class="btn-buy-orange">MUA</button>
+          </div>
+        </div>
+
+        <!-- Package 8: 10000 Coin -->
+        <div class="package-card" data-package="10000" data-price="10.000.000 VNĐ">
+          <div class="package-img-wrapper">
+            <img src="../assets/images/Thong_tin_giao_dich/10000_MYE_COIN.png" alt="10000 MyE Coin">
+          </div>
+          <div class="package-info d-flex align-items-center justify-content-between p-3">
+            <div class="text-start">
+              <div class="package-name fw-bold">10.000 MyE Coin</div>
+              <div class="package-price text-orange fw-bold">10.000.000 VNĐ</div>
+            </div>
+            <button class="btn-buy-orange">MUA</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Features Banner Section -->
+  <section class="features-section py-4 mb-4">
+    <div class="container">
+      <div class="features-banner-wrapper position-relative mx-auto bg-white rounded-4 shadow-sm border p-4">
+        <div class="row align-items-center pe-lg-5 me-lg-4">
+          <!-- Feature 1 -->
+          <div class="col-md-4 mb-3 mb-md-0 d-flex align-items-center gap-3">
+            <div class="feature-icon-badge bg-blue-badge">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2.5L4 6.5V12C4 17.52 12 21 12 21C12 21 20 17.52 20 12V6.5L12 2.5Z" fill="#1E40AF" stroke="#1E40AF" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M9 11.5L11 13.5L15 9.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title fw-bold text-navy-title fs-7">An toàn &amp; Bảo mật</div>
+              <div class="feature-desc text-secondary fs-8">Giao dịch được mã hoá, thông tin của bạn luôn được bảo vệ</div>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="col-md-4 mb-3 mb-md-0 d-flex align-items-center gap-3">
+            <div class="feature-icon-badge bg-orange-badge">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="#FF6600" stroke-width="2.2" fill="none"/>
+                <path d="M12 7V12L15 14.5" stroke="#FF6600" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title fw-bold text-orange-title fs-7">Nạp tự động 24/7</div>
+              <div class="feature-desc text-secondary fs-8">Thanh toán thành công, MyE Coin sẽ được cộng ngay vào tài khoản.</div>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="col-md-4 d-flex align-items-center gap-3">
+            <div class="feature-icon-badge bg-mint-badge">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12V11C4 6.58 7.58 3 12 3C16.42 3 20 6.58 20 11V12" stroke="#059669" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                <rect x="3" y="12" width="3" height="6" rx="1.5" fill="#059669"/>
+                <rect x="18" y="12" width="3" height="6" rx="1.5" fill="#059669"/>
+                <path d="M19 16V17C19 18.66 17.66 20 16 20H14" stroke="#059669" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <div>
+              <div class="feature-title fw-bold text-green-title fs-7">Hỗ trợ nhanh chóng</div>
+              <div class="feature-desc text-secondary fs-8">
+                Email: hotro@mye.vn<br>
+                Hotline: 0902 500 198
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mascot Image (Girl numye.png) -->
+        <img src="../assets/images/Thong_tin_giao_dich/numye.png" alt="MyE Mascot" class="mascot-girl-img d-none d-lg-block">
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Success Payment Modal Popup -->
+  <div id="payment-modal" class="modal-overlay d-none">
+    <div class="modal-box bg-white rounded-4 p-4 text-center shadow-lg">
+      <div class="success-icon-badge mx-auto mb-3">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h3 class="fw-bold text-navy mb-2">Thanh toán thành công!</h3>
+      <p class="text-secondary font-14 mb-4">Giao dịch đã được hệ thống xử lý thành công. MyE Coin đã được cộng vào tài khoản của bạn.</p>
+
+      <div class="modal-info-summary bg-light p-3 rounded-3 mb-4 text-start font-14">
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-secondary">Tài khoản:</span>
+          <span class="fw-bold text-dark" id="modal-val-account">myepro123</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-secondary">Số coin nhận:</span>
+          <span class="fw-bold text-navy" id="modal-val-coins">500 MyE Coin</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="text-secondary">Số tiền thanh toán:</span>
+          <span class="fw-bold text-orange" id="modal-val-price">500.000 VNĐ</span>
+        </div>
+      </div>
+
+      <div class="d-flex gap-2 justify-content-center">
+        <a href="Nap_game.html" class="btn btn-outline-secondary rounded-pill px-4">Về Trang Nạp Game</a>
+        <button id="btn-close-modal" class="btn btn-warning text-white rounded-pill px-4 fw-bold">Tiếp Tục</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="../assets/js/Thong_tin_giao_dich.js"></script>
+</body>
+</html>

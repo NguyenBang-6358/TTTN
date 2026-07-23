@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nạp Game - MyE Portal</title>
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/Nap_game.css">
+</head>
+
+<body>
+
+  <!-- Dynamic Header Container -->
+  <div id="header-container">
+    <header class="mye-header py-3 bg-white border-bottom shadow-sm sticky-top">
+      <div class="container d-flex align-items-center justify-content-between">
+        <!-- Brand Logo -->
+        <a href="Nap_game.html" class="d-flex align-items-center text-decoration-none">
+          <img src="../assets/images/Nap_Game/logo.png" alt="MyE Logo" class="mye-logo" height="52">
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="d-none d-md-flex align-items-center gap-4">
+          <a href="#" class="nav-link">Trang Chủ</a>
+          <a href="#" class="nav-link">Trò Chơi</a>
+          <a href="Nap_game.html" class="nav-link nav-link-active position-relative">Nạp Game</a>
+          <a href="#" class="nav-link">Tin Tức</a>
+          <a href="#" class="nav-link">Hỗ Trợ</a>
+        </nav>
+
+        <!-- Login Button / User Profile Area -->
+        <div class="d-flex align-items-center" id="header-auth-container">
+          <a href="#" class="btn-login-orange" id="btn-login">ĐĂNG NHẬP</a>
+
+          <!-- Logged In User Profile Bar (Initially hidden) -->
+          <div class="user-profile-header position-relative d-none align-items-center gap-2" id="user-profile-bar">
+            <div class="d-flex align-items-center gap-2 cursor-pointer" id="user-profile-toggle">
+              <div class="user-avatar">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="22" cy="22" r="22" fill="#1CB0F6"/>
+                  <circle cx="22" cy="22" r="13" fill="#FCD535"/>
+                  <path d="M15.5 17C16.5 15 19.5 15 20.5 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M23.5 17C24.5 15 27.5 15 28.5 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M16 22.5C16 26 28 26 28 22.5" fill="#D82A2A"/>
+                  <path d="M18.5 23.5C18.5 27 25.5 27 25.5 23.5" fill="#FF5C5C"/>
+                </svg>
+              </div>
+              <div class="user-info-text text-start">
+                <div class="username-text">myepro01</div>
+                <div class="mye-id-text">MyE ID: 00123</div>
+              </div>
+            </div>
+
+            <div class="user-coin-balance d-flex align-items-center gap-2 ms-3">
+              <img src="../assets/images/Nap_Game/coin_M.png" alt="Coin" class="mye-gold-coin-img">
+              <span class="coin-amount">1000</span>
+            </div>
+
+            <!-- Popup Dropdown -->
+            <div class="user-dropdown-menu d-none" id="user-dropdown-menu">
+              <div class="dropdown-header-user d-flex align-items-center gap-2 p-3">
+                <div class="user-avatar-sm">
+                  <svg width="34" height="34" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22" cy="22" r="22" fill="#1CB0F6"/>
+                    <circle cx="22" cy="22" r="13" fill="#FCD535"/>
+                    <path d="M15.5 17C16.5 15 19.5 15 20.5 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M23.5 17C24.5 15 27.5 15 28.5 17" stroke="#7A5200" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M16 22.5C16 26 28 26 28 22.5" fill="#D82A2A"/>
+                    <path d="M18.5 23.5C18.5 27 25.5 27 25.5 23.5" fill="#FF5C5C"/>
+                  </svg>
+                </div>
+                <div class="text-start">
+                  <div class="dropdown-username">myepro001</div>
+                  <div class="dropdown-mye-id">MyE ID: 00123</div>
+                </div>
+              </div>
+              <div class="dropdown-divider-line"></div>
+              <div class="dropdown-menu-list" style="padding: 8px 0 !important; background: #ffffff !important;">
+                <a href="#" onclick="return false;" class="dropdown-item-link" style="display: flex !important; align-items: center !important; gap: 12px !important; padding: 10px 18px !important; color: #334155 !important; text-decoration: none !important;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #334155 !important; flex-shrink: 0 !important;">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                  </svg>
+                  <span style="color: #334155 !important; font-size: 13.5px !important; font-weight: 500 !important;">Quản lý thanh toán</span>
+                </a>
+                <a href="Tai_khoan.html" class="dropdown-item-link" style="display: flex !important; align-items: center !important; gap: 12px !important; padding: 10px 18px !important; color: #334155 !important; text-decoration: none !important;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #334155 !important; flex-shrink: 0 !important;">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span style="color: #334155 !important; font-size: 13.5px !important; font-weight: 500 !important;">Quản lý tài khoản</span>
+                </a>
+                <a href="#" class="dropdown-item-link" id="btn-logout" style="display: flex !important; align-items: center !important; gap: 12px !important; padding: 10px 18px !important; color: #334155 !important; text-decoration: none !important;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #334155 !important; flex-shrink: 0 !important;">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                  </svg>
+                  <span style="color: #334155 !important; font-size: 13.5px !important; font-weight: 500 !important;">Đăng xuất</span>
+                </a>
+              </div>
+              <div class="dropdown-divider-line"></div>
+              <div class="dropdown-footer text-center py-2 px-3" style="background: #ffffff !important; text-align: center !important; padding: 10px 16px !important;">
+                <img src="../assets/images/Nap_Game/logo.png" alt="MyE Logo" class="dropdown-mye-logo" style="height: 36px !important; width: auto !important; display: inline-block !important;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero Banner Section -->
+  <section class="hero-banner-section">
+    <div class="container hero-container">
+      <div class="hero-banner-wrapper">
+        <img src="../assets/images/Nap_Game/Hero-banner.png" alt="Cổng Nạp Chính Thức - Nạp Cực Đã, Quà Cực Cháy"
+          class="hero-banner-img">
+        <a href="#" class="btn-history-transactions">Lịch sử giao dịch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Game List Section -->
+  <section class="game-list-section">
+    <div class="container">
+
+      <!-- Top Title & Search Bar -->
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3 game-section-header">
+        <h2 class="section-title mb-0">DANH SÁCH GAME</h2>
+
+        <!-- Search Box -->
+        <div class="mye-search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="game-search-input" class="form-control" placeholder="Hào Khí Chiến Hồn">
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="d-flex flex-wrap gap-2 mb-4 category-filter">
+        <button class="filter-btn" data-category="ALL">
+          TẤT CẢ <span class="badge-count">60</span>
+        </button>
+        <button class="filter-btn" data-category="SIMULATION">
+          SIMULATION <span class="badge-count">4</span>
+        </button>
+        <button class="filter-btn" data-category="ACTION">
+          ACTION <span class="badge-count">11</span>
+        </button>
+        <button class="filter-btn" data-category="RPG">
+          RPG <span class="badge-count">37</span>
+        </button>
+        <button class="filter-btn" data-category="SHOOTING">
+          SHOOTING <span class="badge-count">5</span>
+        </button>
+        <button class="filter-btn" data-category="RACING">
+          RACING <span class="badge-count">1</span>
+        </button>
+      </div>
+
+      <!-- Game Cards Grid -->
+      <div class="game-grid" id="game-grid-container">
+
+        <!-- Card 1: MYE COIN -->
+        <a href="Mye_coin.html" class="game-card highlight-orange" data-category="ALL">
+          <div class="card-img-wrapper">
+            <img src="../assets/images/Nap_Game/MYECOIN.png" alt="MYE COIN" class="card-img">
+          </div>
+          <div class="game-card-title">MYE COIN</div>
+        </a>
+
+        <!-- Card 2: HÀO KHÍ CHIẾN HỒN -->
+        <a href="#" class="game-card" data-category="RPG">
+          <div class="card-img-wrapper">
+            <img src="../assets/images/Nap_Game/CARD(4).png" alt="Hào Khí Chiến Hồn" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">HÀO KHÍ CHIẾN HỒN</div>
+        </a>
+
+        <!-- Card 3: HÀO KHÍ DU HIỆP -->
+        <a href="#" class="game-card" data-category="RPG">
+          <div class="card-img-wrapper">
+            <img src="../assets/images/Nap_Game/CARD(1).png" alt="Hào Khí Du Hiệp" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">HÀO KHÍ DU HIỆP</div>
+        </a>
+
+        <!-- Card 4: BOOM TANK -->
+        <a href="#" class="game-card" data-category="ACTION">
+          <div class="card-img-wrapper">
+            <img src="../assets/images/Nap_Game/CARD(2).png" alt="Boom Tank" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">BOOM TANK</div>
+        </a>
+
+        <!-- Card 5: CHÂN VƯƠNG -->
+        <a href="#" class="game-card" data-category="RPG">
+          <div class="card-img-wrapper">
+            <img src="../assets/images/Nap_Game/CARD(3).png" alt="Chân Vương" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">CHÂN VƯƠNG</div>
+        </a>
+
+        <!-- Row 2 -->
+        <!-- Card 6: BOOM TANK -->
+        <a href="#" class="game-card" data-category="ACTION">
+          <div class="card-img-wrapper">
+            <img src="../assets/images/Nap_Game/CARD(2).png" alt="Boom Tank" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">BOOM TANK</div>
+        </a>
+
+        <!-- Card 7: HÀO KHÍ CHIẾN HỒN -->
+        <a href="#" class="game-card" data-category="RPG">
+          <div class="card-img-wrapper">
+            <img src="../assets/images/Nap_Game/CARD(4).png" alt="Hào Khí Chiến Hồn" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">HÀO KHÍ CHIẾN HỒN</div>
+        </a>
+
+        <!-- Card 8: HÀO KHÍ DU HIỆP -->
+        <a href="#" class="game-card" data-category="RPG">
+          <div class="card-img-wrapper">
+            <img src="../assets/images/Nap_Game/CARD(1).png" alt="Hào Khí Du Hiệp" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">HÀO KHÍ DU HIỆP</div>
+        </a>
+
+        <!-- Card 9: BOOM TANK -->
+        <a href="#" class="game-card" data-category="ACTION">
+          <div class="card-img-wrapper">
+            <img src="../assets/images/Nap_Game/CARD(2).png" alt="Boom Tank" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">BOOM TANK</div>
+        </a>
+
+        <!-- Card 10: CHÂN VƯƠNG -->
+        <a href="#" class="game-card" data-category="RPG">
+          <div class="card-img-wrapper">
+            <img src="../assets/images/Nap_Game/CARD(3).png" alt="Chân Vương" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">CHÂN VƯƠNG</div>
+        </a>
+
+        <!-- Row 3 -->
+        <a href="#" class="game-card" data-category="ACTION">
+          <div class="card-img-wrapper">
+            <img src="../assets/images/Nap_Game/CARD(2).png" alt="Boom Tank" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">BOOM TANK</div>
+        </a>
+
+        <a href="#" class="game-card" data-category="RPG">
+          <div class="card-img-wrapper">
+            <div class="badge-star">
+              <svg viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <img src="../assets/images/Nap_Game/CARD(4).png" alt="Hào Khí Chiến Hồn" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">HÀO KHÍ CHIẾN HỒN</div>
+        </a>
+
+        <a href="#" class="game-card" data-category="RPG">
+          <div class="card-img-wrapper">
+            <div class="badge-star">
+              <svg viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <img src="../assets/images/Nap_Game/CARD(1).png" alt="Hào Khí Du Hiệp" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">HÀO KHÍ DU HIỆP</div>
+        </a>
+
+        <a href="#" class="game-card" data-category="ACTION">
+          <div class="card-img-wrapper">
+            <div class="badge-star">
+              <svg viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <img src="../assets/images/Nap_Game/CARD(2).png" alt="Boom Tank" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">BOOM TANK</div>
+        </a>
+
+        <a href="#" class="game-card" data-category="RPG">
+          <div class="card-img-wrapper">
+            <div class="badge-star">
+              <svg viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <img src="../assets/images/Nap_Game/CARD(3).png" alt="Chân Vương" class="card-img">
+            <div class="badge-mye-icon">
+              <img src="../assets/images/Nap_Game/logo.png" alt="MyE">
+            </div>
+          </div>
+          <div class="game-card-title">CHÂN VƯƠNG</div>
+        </a>
+
+
+
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="pagination-dots">
+        <span class="pagination-dot active" title="Trang 1"></span>
+        <span class="pagination-dot" title="Trang 2"></span>
+        <span class="pagination-dot" title="Trang 3"></span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Dynamic Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Bootstrap 5 JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS Scripts -->
+  <script src="../assets/js/Header_active.js"></script>
+  <script src="../assets/js/Nap_game.js"></script>
+</body>
+
+</html>

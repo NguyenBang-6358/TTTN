@@ -1,0 +1,752 @@
+/* MyE Nap Game Custom CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-orange: #FF6600;
+  --orange-gradient: linear-gradient(90deg, #FF7A00 0%, #EE5100 100%);
+  --dark-navy: #010C27;
+  --navy-blue: #0C3875;
+  --brand-blue: #093A88;
+  --light-gray-bg: #F4F6F9;
+  --footer-bg: #EDEDED;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #2D3748;
+  background-color: #FFFFFF;
+}
+
+/* Header Customizations */
+.mye-header {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 14px 0 !important;
+  min-height: 80px;
+}
+
+.mye-logo {
+  height: 52px !important;
+  width: auto;
+  object-fit: contain;
+  position: relative;
+  left: 145px;
+  transition: transform 0.2s ease;
+}
+
+.mye-logo:hover {
+  transform: scale(1.03);
+}
+
+.mye-header .nav-link {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+  letter-spacing: 0px !important;
+  color: var(--brand-blue) !important;
+  padding: 8px 16px !important;
+  transition: color 0.2s ease;
+}
+
+.mye-header .nav-link:hover {
+  color: var(--primary-orange) !important;
+}
+
+.mye-header .nav-link-active {
+  color: var(--primary-orange) !important;
+  font-weight: 700 !important;
+}
+
+.mye-header .nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 16px;
+  right: 16px;
+  height: 3px;
+  background-color: var(--primary-orange);
+  border-radius: 2px;
+}
+
+/* Login Button */
+.btn-login-orange {
+  background: url('../images/Nap_Game/button_dangnhap.png') no-repeat center center;
+  background-size: 100% 100%;
+  border: none;
+  font-size: 12px;
+  font-weight: 800;
+  color: #FFFFFF !important;
+  text-transform: uppercase;
+  min-width: 115px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0 16px;
+  position: relative;
+  right: 120px;
+  transition: background-image 0.2s ease, transform 0.2s ease, filter 0.2s ease;
+  filter: drop-shadow(0 3px 8px rgba(255, 102, 0, 0.3));
+}
+
+.btn-login-orange:hover {
+  background-image: url('../images/Nap_Game/button_hover.png');
+  color: #FFFFFF !important;
+  filter: drop-shadow(0 4px 12px rgba(0, 180, 80, 0.4));
+  transform: translateY(-1px);
+}
+
+/* Logged-in User Profile Header & Dropdown Popup */
+.user-profile-header {
+  position: relative;
+  right: 120px;
+  user-select: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.username-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #FF7A00;
+}
+
+.mye-id-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #4A75A0;
+}
+
+.mye-gold-coin-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.coin-amount {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 22px;
+  color: #0C3875;
+}
+
+.user-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 10px) !important;
+  left: -6px !important;
+  right: auto !important;
+  width: 220px !important;
+  height: auto !important;
+  min-height: max-content !important;
+  background-color: #FFFFFF !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12) !important;
+  border: 1px solid #EAEAEA !important;
+  z-index: 9999 !important;
+  overflow: visible !important;
+  animation: dropdownSlideDown 0.2s ease;
+}
+
+.user-dropdown-menu.d-none {
+  display: none !important;
+}
+
+.user-dropdown-menu:not(.d-none) {
+  display: block !important;
+}
+
+@keyframes dropdownSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-header-user {
+  background-color: #FFFFFF !important;
+  padding: 14px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.dropdown-username {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  color: #0F172A !important;
+  line-height: 18px !important;
+}
+
+.dropdown-mye-id {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  color: #64748B !important;
+  line-height: 16px !important;
+}
+
+.dropdown-divider-line {
+  height: 1px !important;
+  background-color: #EDEDED !important;
+  width: 100% !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+.dropdown-menu-list {
+  padding: 8px 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+  background-color: #FFFFFF !important;
+  display: block !important;
+  height: auto !important;
+}
+
+.dropdown-item-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 18px !important;
+  height: 42px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #334155 !important;
+  text-decoration: none !important;
+  background-color: transparent !important;
+  transition: all 0.2s ease !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.dropdown-item-link span {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #334155 !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.dropdown-item-link svg {
+  color: #334155 !important;
+  stroke: #334155 !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  width: 18px !important;
+  height: 18px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: color 0.2s ease !important;
+}
+
+.dropdown-item-link:hover {
+  background-color: #F8FAFC !important;
+  color: #FF6600 !important;
+}
+
+.dropdown-item-link:hover span {
+  color: #FF6600 !important;
+}
+
+.dropdown-item-link:hover svg {
+  color: #FF6600 !important;
+  stroke: #FF6600 !important;
+}
+
+.dropdown-footer {
+  background-color: #FFFFFF !important;
+  padding: 10px 16px !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+.dropdown-mye-logo {
+  height: 36px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+/* Hero Section */
+.hero-banner-section {
+  background-color: #000D2D;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.hero-container {
+  max-width: 1180px;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.hero-banner-wrapper {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 102, 255, 0.3);
+  border: 1.5px solid rgba(0, 120, 255, 0.4);
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.btn-history-transactions {
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+  width: 240px;
+  height: 46px;
+  background: rgba(4, 25, 70, 0.92);
+  border: 2px solid #1E88E5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 0 15px rgba(30, 136, 229, 0.5);
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.btn-history-transactions:hover {
+  background: rgba(28, 85, 175, 0.95);
+  border-color: #4285F4;
+  color: #FFFFFF;
+}
+
+/* Game List Section */
+.game-list-section {
+  padding: 40px 0 60px 0;
+  background-color: #FFFFFF;
+}
+
+.game-list-section .container {
+  max-width: 1280px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.game-section-header {
+  width: 1040px !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  line-height: 44px !important;
+  letter-spacing: -0.02em !important;
+  color: #093A88 !important;
+}
+
+/* Search Box */
+.mye-search-box {
+  position: relative;
+  width: 190px;
+}
+
+.mye-search-box input {
+  width: 190px;
+  height: 36px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 6px 12px 6px 38px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #282828;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.30) !important;
+  transition: all 0.2s ease;
+}
+
+.mye-search-box input::placeholder {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: rgba(40, 40, 40, 0.4);
+}
+
+.mye-search-box input:hover,
+.mye-search-box input:focus {
+  outline: none;
+  background-color: #FFFFFF;
+  border: 1.5px solid #FF6600 !important;
+  box-shadow: 0px 2px 12px rgba(255, 102, 0, 0.20) !important;
+}
+
+.mye-search-box .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #334155;
+  transition: color 0.2s ease;
+  pointer-events: none;
+}
+
+.mye-search-box:hover .search-icon,
+.mye-search-box:focus-within .search-icon {
+  color: #FF6600 !important;
+}
+
+/* Category Filter Pills */
+.category-filter {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 0 !important;
+  flex-wrap: nowrap !important;
+  width: 1040px !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.filter-btn {
+  background-color: #EAEAEA;
+  border: 1.5px solid transparent !important;
+  color: #27272A !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  height: 40px;
+  padding: 0 10px 0 14px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.30) !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-btn[data-category="ALL"] {
+  width: 165px;
+  height: 40px;
+}
+
+.filter-btn[data-category="SIMULATION"] {
+  width: 185px;
+  height: 40px;
+}
+
+.filter-btn[data-category="ACTION"] {
+  width: 150px;
+  height: 40px;
+}
+
+.filter-btn[data-category="RPG"] {
+  width: 125px;
+  height: 40px;
+}
+
+.filter-btn[data-category="SHOOTING"] {
+  width: 170px;
+  height: 40px;
+}
+
+.filter-btn[data-category="RACING"] {
+  width: 145px;
+  height: 40px;
+}
+
+/* Hover Orange Outline Style matching screenshot */
+.filter-btn:hover {
+  background-color: #FFFFFF !important;
+  border: 1.5px solid #FF6600 !important;
+  color: #FF6600 !important;
+  box-shadow: 0px 2px 12px rgba(255, 102, 0, 0.20) !important;
+}
+
+.filter-btn .badge-count {
+  background-color: #D4D4D8;
+  color: #18181B;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover .badge-count {
+  background-color: #FFE5D4 !important;
+  color: #FF6600 !important;
+}
+
+/* Game Cards Grid */
+.game-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, 170px) !important;
+  justify-content: space-between !important;
+  width: 1040px !important;
+  max-width: 100% !important;
+  gap: 32px 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 992px) {
+  .game-grid {
+    grid-template-columns: repeat(3, 170px);
+    justify-content: center;
+    gap: 24px 16px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 12px;
+    width: 100%;
+  }
+}
+
+.game-card {
+  width: 170px;
+  height: 202px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.card-img-wrapper {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.30);
+  border: none;
+  transition: all 0.25s ease;
+  background-color: transparent;
+}
+
+.card-img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Star Badge (Top-Left) */
+.badge-star {
+  display: none !important;
+}
+
+.badge-star svg {
+  width: 14px;
+  height: 14px;
+  fill: #FFEA00;
+}
+
+/* MyE Logo Corner Badge (Bottom-Right) */
+.badge-mye-icon {
+  display: none !important;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  padding: 3px;
+}
+
+.badge-mye-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Game Title */
+.game-card-title {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #1E293B;
+  text-transform: uppercase;
+  text-align: center;
+  transition: color 0.25s ease;
+  letter-spacing: 0.3px;
+}
+
+/* Active / Orange Highlighted Cards (MYE COIN) */
+.game-card.highlight-orange .card-img-wrapper {
+  border-radius: 32px !important;
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  overflow: visible !important;
+  transition: all 0.3s ease;
+}
+
+.game-card.highlight-orange .card-img {
+  border-radius: 32px !important;
+  filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.30)) !important;
+  transition: filter 0.3s ease;
+}
+
+.game-card.highlight-orange:hover .card-img {
+  filter: drop-shadow(0px 0px 10px rgba(255, 102, 0, 0.85)) drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.30)) !important;
+}
+
+/* Card Hover Effects (Excluding MYE COIN) */
+.game-card:not(.highlight-orange):hover .card-img-wrapper {
+  box-shadow: 0 0 10px 1px rgba(255, 102, 0, 0.40), 0 2px 10px rgba(0, 0, 0, 0.20) !important;
+}
+
+.game-card:not(.highlight-orange):hover .card-img {
+  transform: scale(1.08);
+}
+
+.game-card.highlight-orange .game-card-title,
+.game-card:hover .game-card-title {
+  color: var(--primary-orange);
+}
+
+/* Pagination Dots */
+.pagination-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+.pagination-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--navy-blue);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pagination-dot.active {
+  background-color: var(--primary-orange);
+  transform: scale(1.15);
+}
+
+/* Footer Custom Styling */
+.mye-footer {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 18px !important;
+  letter-spacing: 0px !important;
+  text-align: center !important;
+  padding-bottom: 12px !important;
+}
+
+.mye-footer p,
+.mye-footer div {
+  margin-bottom: 4px !important;
+}
+
+.mye-footer .mb-3,
+.mye-footer .mb-2,
+.mye-footer .mb-1 {
+  margin-bottom: 4px !important;
+}
+
+.mye-footer p,
+.mye-footer div,
+.mye-footer a,
+.mye-footer span {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 18px !important;
+  letter-spacing: 0px !important;
+  color: #374151 !important;
+}
+
+.mye-footer h6 {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 18px !important;
+  letter-spacing: 0px !important;
+  margin-bottom: 6px !important;
+  color: #111827 !important;
+}
+
+.bg-light-gray {
+  background-color: var(--footer-bg);
+}
+
+.mye-footer-logo {
+  max-width: 150px !important;
+  max-height: 150px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain;
+}

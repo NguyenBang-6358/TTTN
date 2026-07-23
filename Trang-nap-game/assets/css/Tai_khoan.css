@@ -1,0 +1,941 @@
+/* Account Management Custom CSS - Tai_khoan.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-orange: #FF6600;
+  --orange-gradient: linear-gradient(90deg, #FF7A00 0%, #EE5100 100%);
+  --dark-navy: #010C27;
+  --navy-blue: #0C3875;
+  --brand-blue: #093A88;
+  --light-gray-bg: #F8FAFC;
+  --footer-bg: #EDEDED;
+  --cyan-avatar: #1CB0F6;
+  --border-light: #E2E8F0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1E293B;
+  background-color: #F8FAFC;
+}
+
+/* ==========================================================================
+   Account Banner / Hero Section
+   ========================================================================== */
+.account-banner-section {
+  background: url('../images/Tai_khoan/bannerdautrang.png') no-repeat center center / cover;
+  padding: 35px 0;
+  min-height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+.account-banner-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.account-banner-user-group {
+  padding-left: 110px;
+}
+
+.user-avatar-hero-container {
+  position: relative;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  border: 6px solid #1CB0F6;
+  background: #1CB0F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.user-avatar-hero-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.account-user-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.account-user-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.account-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+}
+
+.account-meta-item strong {
+  font-weight: 600;
+}
+
+.account-meta-item svg {
+  color: #FFFFFF;
+  opacity: 1;
+  flex-shrink: 0;
+}
+
+/* Right Side Nav Pills / Tabs */
+.account-nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-end;
+  margin-top: 125px;
+}
+
+.account-nav-btn {
+  background: transparent;
+  color: #FFFFFF;
+  border: 2px solid #3B82F6;
+  border-radius: 8px;
+  height: 34px;
+  padding: 0 32px;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.account-nav-btn:hover,
+.account-nav-btn.active {
+  background: rgba(30, 80, 200, 0.6);
+  border: 2px solid #60A5FA;
+  color: #FFFFFF;
+  box-shadow: 0 0 14px rgba(96, 165, 250, 0.85), 0 0 4px rgba(59, 130, 246, 0.6);
+}
+
+/* ==========================================================================
+   Security Gauge Section ("Mức độ bảo mật")
+   ========================================================================== */
+.security-level-section {
+  padding: 40px 0 25px;
+}
+
+.security-gauge-img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.security-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 8px;
+}
+
+.security-desc {
+  font-size: 14.5px;
+  color: #64748B;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Account Info Section Header
+   ========================================================================== */
+.account-section-header {
+  padding: 15px 0 25px;
+}
+
+.account-main-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 8px;
+}
+
+.account-main-subtitle {
+  font-size: 14px;
+  color: #64748B;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Account Main Content Cards
+   ========================================================================== */
+.account-card-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.account-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  padding: 28px 36px;
+  margin-bottom: 28px;
+  transition: box-shadow 0.25s ease;
+}
+
+.account-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Card Header */
+.card-head-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-head-avatar svg {
+  width: 100%;
+  height: 100%;
+}
+
+.card-head-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0C3875;
+  margin-bottom: 2px;
+}
+
+.card-head-status-incomplete {
+  font-size: 13px;
+  font-weight: 600;
+  color: #FF4D4D;
+}
+
+/* Buttons inside Card Header & Rows */
+.btn-outline-orange-custom {
+  border: 1.5px solid #FF6600;
+  color: #FF6600;
+  background: transparent;
+  border-radius: 6px;
+  padding: 4px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-outline-orange-custom:hover {
+  background: #FF6600;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.25);
+}
+
+/* Inline Profile Edit Mode Controls */
+.btn-cancel-edit {
+  border: 1.5px solid #0C3875;
+  color: #0C3875;
+  background: #FFFFFF;
+  border-radius: 8px;
+  height: 30px;
+  padding: 0 28px;
+  font-size: 11.5px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-cancel-edit:hover {
+  background: #F1F5F9;
+  color: #0C3875;
+}
+
+.btn-save-edit {
+  background: linear-gradient(90deg, #FF7A00 0%, #EE5100 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  height: 30px;
+  padding: 0 32px;
+  font-size: 11.5px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-save-edit:hover {
+  opacity: 0.92;
+  box-shadow: 0 6px 16px rgba(255, 102, 0, 0.4);
+}
+
+.custom-edit-input {
+  width: 100%;
+  max-width: 450px;
+  height: 52px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  background-color: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.custom-edit-input:hover,
+.custom-edit-input:focus {
+  border-color: #FF6600 !important;
+  color: #FF6600 !important;
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.12);
+}
+
+.custom-edit-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.select-chevron-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input-calendar-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.custom-edit-input:hover~.select-chevron-icon,
+.custom-edit-input:focus~.select-chevron-icon {
+  stroke: #FF6600;
+}
+
+.custom-edit-input:hover~.input-calendar-icon .cal-theme,
+.custom-edit-input:focus~.input-calendar-icon .cal-theme {
+  fill: #FF6600;
+}
+
+/* Personal Info Items List */
+.personal-info-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 85px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #E2E8F0;
+  min-height: 64px;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+
+#btn-verify-phone {
+  transform: translateX(85px);
+}
+
+.info-row-label-col {
+  width: 240px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.info-row-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0C3875;
+  flex-shrink: 0;
+}
+
+.info-row-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0C3875;
+}
+
+.info-row-value-col {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14.5px;
+  color: #334155;
+}
+
+.text-muted-row {
+  color: #94A3B8;
+}
+
+.verified-email-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.check-icon-circle {
+  width: 18px;
+  height: 18px;
+  background: #10B981;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Account Sync Card ("Đồng bộ tài khoản")
+   ========================================================================== */
+.btn-circle-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid #0C3875;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #0C3875;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-circle-arrow:hover {
+  background: #0C3875;
+  color: #FFFFFF;
+}
+
+/* Account Sync Expandable Form */
+.account-sync-form-expand {
+  padding: 0 28px;
+}
+
+@media (max-width: 991.98px) {
+  .account-sync-form-expand {
+    padding: 0;
+  }
+}
+
+.current-account-card {
+  border-color: #E2E8F0 !important;
+  background: #FFFFFF;
+}
+
+.btn-confirm-sync {
+  background: #0C3875;
+  color: #FFFFFF;
+  font-size: 14.5px;
+  font-weight: 700;
+  height: 48px;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-confirm-sync:hover {
+  background: #092B5C;
+  box-shadow: 0 4px 14px rgba(12, 56, 117, 0.3);
+}
+
+/* Synced State Views */
+.sync-dashed-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sync-dashed-line {
+  flex: 1;
+  border-top: 1.5px dashed #CBD5E1;
+}
+
+.sync-status-pill {
+  background-color: #DCFCE7;
+  color: #166534;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 36px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.sync-success-alert {
+  background-color: #DCFCE7;
+  border: 1px solid #BBF7D0;
+  border-radius: 12px;
+  justify-content: center;
+}
+
+.text-success-dark {
+  color: #166534 !important;
+}
+
+.sync-box-container {
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 20px 28px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.sync-box-container .sync-profile-item:first-child {
+  margin-left: 55px;
+}
+
+.sync-profile-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.facebook-icon-bg {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.google-icon-bg {
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.facebook-icon-bg > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.google-icon-bg > svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.option-icon-box .google-icon-bg > svg {
+  width: 18px;
+  height: 18px;
+}
+
+.facebook-icon-bg path {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(1.18);
+}
+
+.mye-placeholder-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #DCE6F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0C3875;
+  flex-shrink: 0;
+}
+
+.mye-placeholder-avatar svg {
+  width: 22px;
+  height: 22px;
+}
+
+.sync-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 2px;
+}
+
+.sync-id {
+  font-size: 13px;
+  color: #64748B;
+}
+
+.sync-arrow-icon {
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-unsynced {
+  background: #F6C5C6;
+  color: #D33033;
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: none;
+  cursor: default;
+  transition: opacity 0.2s;
+}
+
+.badge-unsynced:hover {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Activity History Card ("Lịch sử hoạt động")
+   ========================================================================== */
+.activity-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.activity-card-body {
+  padding: 0 28px;
+}
+
+.session-section-header {
+  margin-left: 20px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.btn-circle-arrow .chevron-arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-circle-arrow.expanded .chevron-arrow-icon {
+  transform: rotate(90deg);
+}
+
+.logout-sessions-card {
+  border-color: #E2E8F0 !important;
+  background: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 10px !important;
+}
+
+#btn-logout-all-sessions {
+  font-size: 12.5px;
+  padding: 5px 14px;
+  border-radius: 6px;
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.activity-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.activity-table thead th {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0F172A;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #FF6600 !important;
+  background: transparent;
+}
+
+.activity-table tbody tr {
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.activity-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.activity-table tbody td {
+  padding: 14px 0;
+  background: transparent;
+}
+
+.activity-card-body .font-16 {
+  font-size: 14.5px;
+}
+
+.activity-card-body .font-14 {
+  font-size: 13px;
+}
+
+.activity-card-body .font-13 {
+  font-size: 12px;
+}
+
+.activity-card-body .font-12 {
+  font-size: 11px;
+}
+
+.activity-card-body .font-11 {
+  font-size: 10px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-13 {
+  font-size: 13.5px;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-11 {
+  font-size: 11px;
+}
+
+/* ==========================================================================
+   Modals & Toast Notifications
+   ========================================================================== */
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.custom-modal-box {
+  background: #FFFFFF;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 520px;
+  padding: 28px 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .account-banner-section {
+    padding: 30px 0;
+  }
+
+  .account-banner-user-group {
+    padding-left: 0;
+  }
+
+  .user-avatar-hero-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .account-nav-tabs {
+    margin-top: 20px;
+    justify-content: flex-start;
+  }
+
+  .info-row-label-col {
+    width: 180px;
+  }
+
+  .account-card {
+    padding: 24px 20px;
+  }
+
+  .activity-card-body {
+    padding: 0 10px;
+  }
+
+  .sync-box-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .sync-box-container .sync-profile-item:first-child {
+    margin-left: 0;
+  }
+
+  .sync-arrow-icon {
+    align-self: center;
+    transform: rotate(90deg);
+  }
+
+  .badge-unsynced {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .account-user-name {
+    font-size: 22px;
+  }
+
+  .security-gauge-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .info-row-label-col {
+    width: 100%;
+  }
+
+  .info-row-value-col {
+    width: 100%;
+  }
+
+  .account-nav-tabs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .account-nav-btn {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Account Sync Custom Dropdown Styling */
+.account-dropdown-trigger {
+  user-select: none;
+  transition: all 0.2s ease;
+  border: 1px dashed transparent;
+}
+
+.account-dropdown-trigger:hover {
+  background-color: #F8FAFC !important;
+  border-color: #CBD5E1 !important;
+}
+
+.account-type-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  width: 290px;
+  z-index: 1050;
+  overflow: hidden;
+  animation: dropdownFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.account-dropdown-option {
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.account-dropdown-option:last-child {
+  border-bottom: none;
+}
+
+.account-dropdown-option:hover {
+  background-color: #F1F5F9;
+}
+
+.account-dropdown-option.active {
+  background-color: #EFF6FF;
+}
+
+.dropdown-chevron-icon {
+  transition: transform 0.2s ease;
+}
+
+.account-dropdown-trigger.active-open .dropdown-chevron-icon {
+  transform: rotate(180deg);
+}
